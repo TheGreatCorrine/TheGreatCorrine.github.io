@@ -1,16 +1,12 @@
-import React from 'react'
-import { useState } from 'react'
+// temporarily remove react to pass build
+// import React from 'react'
+// import { useState } from 'react'
 import { Link } from 'react-scroll'
 import { motion } from 'framer-motion'
-import { SunIcon, MoonIcon } from '@heroicons/react/24/outline'
+// import { SunIcon, MoonIcon } from '@heroicons/react/24/outline'
 import ThemeToggle from './ui/ThemeToggle'
 
-interface NavbarProps {
-  theme: string
-  setTheme: (theme: string) => void
-}
-
-const Navbar = ({ theme, setTheme }: NavbarProps) => {
+const Navbar = () => {
   return (
     <motion.nav 
       initial={{ y: -100 }}
