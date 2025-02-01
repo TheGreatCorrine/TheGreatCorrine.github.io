@@ -174,7 +174,7 @@ const Background = () => {
         'linear-gradient(to bottom right, rgba(255, 240, 245, 0.9), rgba(230, 230, 250, 0.9), rgba(176, 196, 222, 0.9))',
       ],
       transition: {
-        duration: 20,
+        duration: 10,
         repeat: Infinity,
         ease: "linear"
       }
