@@ -1,4 +1,5 @@
-import React from 'react'
+// temporarily remove react to pass build
+// import React from 'react'
 
 const Projects = () => {
   return (
