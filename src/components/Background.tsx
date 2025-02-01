@@ -138,14 +138,40 @@ const MouseTrail = () => {
 
 const Background = () => {
   const controls = useAnimation()
+  const [isDark, setIsDark] = useState(document.documentElement.classList.contains('dark'))
+
+  useEffect(() => {
+    // 监听主题变化
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.attributeName === 'class') {
+          setIsDark(document.documentElement.classList.contains('dark'))
+        }
+      })
+    })
+
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['class']
+    })
+
+    return () => observer.disconnect()
+  }, [])
 
   useEffect(() => {
     controls.start({
-      background: [
+      background: isDark ? [
+        // 暗色模式渐变
         'linear-gradient(to bottom right, rgba(49, 46, 129, 0.7), rgba(17, 24, 39, 0.8), rgba(15, 23, 42, 0.7))',
         'linear-gradient(to bottom right, rgba(67, 56, 202, 0.7), rgba(79, 70, 229, 0.8), rgba(99, 102, 241, 0.7))',
         'linear-gradient(to bottom right, rgba(59, 130, 246, 0.7), rgba(37, 99, 235, 0.8), rgba(29, 78, 216, 0.7))',
         'linear-gradient(to bottom right, rgba(49, 46, 129, 0.7), rgba(17, 24, 39, 0.8), rgba(15, 23, 42, 0.7))',
+      ] : [
+        // 亮色模式渐变
+        'linear-gradient(to bottom right, rgba(255, 240, 245, 0.9), rgba(230, 230, 250, 0.9), rgba(176, 196, 222, 0.9))',
+        'linear-gradient(to bottom right, rgba(230, 230, 250, 0.9), rgba(176, 196, 222, 0.9), rgba(173, 216, 230, 0.9))',
+        'linear-gradient(to bottom right, rgba(176, 196, 222, 0.9), rgba(173, 216, 230, 0.9), rgba(230, 230, 250, 0.9))',
+        'linear-gradient(to bottom right, rgba(255, 240, 245, 0.9), rgba(230, 230, 250, 0.9), rgba(176, 196, 222, 0.9))',
       ],
       transition: {
         duration: 20,
@@ -153,14 +179,14 @@ const Background = () => {
         ease: "linear"
       }
     })
-  }, [])
+  }, [isDark])
 
   return (
     <div className="fixed inset-0 min-h-screen w-full overflow-hidden">
       {/* 动态渐变背景 */}
       <motion.div 
         animate={controls}
-        className="fixed inset-0 bg-gradient-to-br from-indigo-950/70 via-slate-900/80 to-slate-950/70"
+        className="fixed inset-0 bg-gradient-to-br from-pink-100/90 via-purple-100/90 to-blue-100/90 dark:from-indigo-950/70 dark:via-slate-900/80 dark:to-slate-950/70"
       />
       
       {/* 星空效果 */}
