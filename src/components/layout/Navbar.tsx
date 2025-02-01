@@ -17,7 +17,7 @@ const Navbar = () => {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className="fixed w-full top-0 z-50 bg-white dark:bg-dark-surface dark:backdrop-blur-sm"
+      className="fixed w-full top-0 z-50 bg-white/70 dark:bg-dark-surface/80 backdrop-blur-md"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
@@ -63,7 +63,7 @@ const Navbar = () => {
           animate={{ opacity: 1, y: 0 }}
           className="md:hidden"
         >
-          <div className="px-2 pt-2 pb-3 space-y-1 bg-white dark:bg-gray-900">
+          <div className="px-2 pt-2 pb-3 space-y-1 bg-white/80 dark:bg-gray-900/90 backdrop-blur-sm">
             <MobileNavLink href="#about">About me</MobileNavLink>
             <MobileNavLink href="#projects">Projects</MobileNavLink>
             <MobileNavLink href="#blogs">Blogs</MobileNavLink>

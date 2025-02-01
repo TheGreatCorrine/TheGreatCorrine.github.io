@@ -1,5 +1,4 @@
-// temporarily remove react to pass build
-// import React from 'react'
+import React from 'react'
 
 const Contact = () => {
   return (
