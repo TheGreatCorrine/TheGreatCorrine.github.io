@@ -1,7 +1,9 @@
 import React from 'react'
+import { useState } from 'react'
 import { Link } from 'react-scroll'
 import { motion } from 'framer-motion'
 import { SunIcon, MoonIcon } from '@heroicons/react/24/outline'
+import ThemeToggle from './ui/ThemeToggle'
 
 interface NavbarProps {
   theme: string
@@ -30,16 +32,7 @@ const Navbar = ({ theme, setTheme }: NavbarProps) => {
               </Link>
             ))}
           </div>
-          <button
-            onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-            className="p-2 rounded-full text-white/90 hover:text-white hover:bg-white/10"
-          >
-            {theme === 'dark' ? (
-              <SunIcon className="w-6 h-6" />
-            ) : (
-              <MoonIcon className="w-6 h-6" />
-            )}
-          </button>
+          <ThemeToggle />
         </div>
       </div>
     </motion.nav>

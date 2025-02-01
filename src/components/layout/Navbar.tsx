@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { type ReactNode } from 'react'
 import { useState } from 'react'
 import { Link } from 'react-scroll'
 import ThemeToggle from '../ui/ThemeToggle'
@@ -7,7 +7,7 @@ import { FiGithub } from 'react-icons/fi'
 
 interface NavLinkProps {
   href: string
-  children: React.ReactNode
+  children: ReactNode
 }
 
 interface NavbarProps {
@@ -15,7 +15,7 @@ interface NavbarProps {
   setTheme: (theme: string) => void;
 }
 
-const Navbar = ({ theme, setTheme }: NavbarProps) => {
+const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
