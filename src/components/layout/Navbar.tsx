@@ -1,4 +1,4 @@
-import React, { type ReactNode } from 'react'
+import type { ReactNode } from 'react'
 import { useState } from 'react'
 import { Link } from 'react-scroll'
 import ThemeToggle from '../ui/ThemeToggle'
@@ -8,11 +8,6 @@ import { FiGithub } from 'react-icons/fi'
 interface NavLinkProps {
   href: string
   children: ReactNode
-}
-
-interface NavbarProps {
-  theme: string;
-  setTheme: (theme: string) => void;
 }
 
 const Navbar = () => {
