@@ -2,7 +2,8 @@ import { motion } from 'framer-motion';
 import { useState, useRef, useEffect } from 'react';
 
 const Welcome = ({ onExplore }: { onExplore: () => void }) => {
-  const [isHovered, setIsHovered] = useState(false);
+  // const [isHovered, setIsHovered] = useState(false);
+  // temporarily remove hover effect to pass build
   const cardRef = useRef<HTMLDivElement>(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHoveringCard, setIsHoveringCard] = useState(false);
@@ -142,8 +143,6 @@ const Welcome = ({ onExplore }: { onExplore: () => void }) => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={onExplore}
-              onMouseEnter={() => setIsHovered(true)}
-              onMouseLeave={() => setIsHovered(false)}
               className="mt-8 px-8 py-3 
                          bg-gradient-to-r from-indigo-400/70 via-purple-400/70 to-blue-400/70
                          dark:from-cyan-500/40 dark:via-blue-500/40 dark:to-indigo-500/40
