@@ -31,6 +31,9 @@ export default {
       animation: {
         'glow': 'glow 2s ease-in-out infinite alternate',
         'float': 'float 6s ease-in-out infinite',
+        'border-flow': 'border-flow 3s linear infinite',
+        'tilt': 'tilt 10s infinite linear',
+        'spin-slow': 'spin 20s linear infinite',
       },
       keyframes: {
         glow: {
@@ -40,8 +43,29 @@ export default {
         float: {
           '0%, 100%': { transform: 'translateY(0)' },
           '50%': { transform: 'translateY(-20px)' }
+        },
+        'border-flow': {
+          '0%, 100%': {
+            'background-size': '200% 200%',
+            'background-position': 'left center'
+          },
+          '50%': {
+            'background-size': '200% 200%',
+            'background-position': 'right center'
+          }
+        },
+        'tilt': {
+          '0%, 100%': {
+            transform: 'rotate(-1deg)'
+          },
+          '50%': {
+            transform: 'rotate(1deg)'
+          }
         }
-      }
+      },
+      backgroundImage: {
+        'gradient-conic': 'conic-gradient(var(--tw-gradient-stops))',
+      },
     },
   },
   plugins: [],
