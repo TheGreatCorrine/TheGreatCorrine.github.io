@@ -70,26 +70,70 @@ const StarField = () => {
   return (
     <div className="absolute inset-0">
       {stars.map((star) => (
-        <motion.div
-          key={star.id}
-          className="absolute rounded-full bg-white"
-          style={{
-            width: star.size,
-            height: star.size,
-            left: star.left,
-            top: star.top,
-          }}
-          animate={{
-            scale: [1, 1.5, 1],
-            opacity: [0.3, 0.8, 0.3],
-          }}
-          transition={{
-            duration: star.duration,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: star.delay
-          }}
-        />
+        <div key={star.id} className="absolute" style={{ left: star.left, top: star.top }}>
+          {/* 最内层亮点 */}
+          <motion.div
+            className="absolute rounded-full bg-white/80"
+            style={{
+              width: star.size * 0.5,
+              height: star.size * 0.5,
+              transform: 'translate(-50%, -50%)',
+              filter: 'blur(0.5px)',
+            }}
+            animate={{
+              scale: [1, 1.3, 1],
+              opacity: [0.5, 0.8, 0.5],
+            }}
+            transition={{
+              duration: star.duration,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: star.delay
+            }}
+          />
+          
+          {/* 内层光晕 */}
+          <motion.div
+            className="absolute rounded-full bg-white/70"
+            style={{
+              width: star.size,
+              height: star.size,
+              transform: 'translate(-50%, -50%)',
+              filter: 'blur(0.8px)',
+            }}
+            animate={{
+              scale: [1, 1.5, 1],
+              opacity: [0.4, 0.7, 0.4],
+            }}
+            transition={{
+              duration: star.duration,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: star.delay
+            }}
+          />
+          
+          {/* 外层光晕 保持不变 */}
+          <motion.div
+            className="absolute rounded-full bg-white/20"
+            style={{
+              width: star.size * 2,
+              height: star.size * 2,
+              transform: 'translate(-50%, -50%)',
+              filter: 'blur(1px)',
+            }}
+            animate={{
+              scale: [1, 1.8, 1],
+              opacity: [0.1, 0.3, 0.1],
+            }}
+            transition={{
+              duration: star.duration,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: star.delay
+            }}
+          />
+        </div>
       ))}
     </div>
   )
