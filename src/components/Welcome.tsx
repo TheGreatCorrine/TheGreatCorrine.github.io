@@ -134,7 +134,9 @@ const Welcome = ({ onExplore }: { onExplore: () => void }) => {
             </div>
             
             <h2 className="text-2xl font-semibold 
-                           text-gray-800 dark:text-white/90 mb-2
+                           text-transparent bg-clip-text
+                           bg-gradient-to-r from-indigo-600 to-blue-600
+                           dark:from-cyan-200 dark:to-blue-200 mb-2
                            [text-shadow:_0_1px_2px_rgba(0,0,0,0.1)]">
               Corrine
             </h2>
@@ -166,7 +168,7 @@ const Welcome = ({ onExplore }: { onExplore: () => void }) => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
               className="text-4xl font-bold 
-                         bg-gradient-to-r from-gray-800 to-gray-600
+                         bg-gradient-to-r from-indigo-600 via-blue-600 to-purple-600
                          dark:from-cyan-200 dark:to-blue-200
                          bg-clip-text text-transparent
                          [text-shadow:_0_2px_4px_rgba(0,0,0,0.1)]
