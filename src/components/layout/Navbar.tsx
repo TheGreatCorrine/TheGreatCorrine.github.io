@@ -17,7 +17,7 @@ const Navbar = () => {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className="fixed w-full top-0 z-50 bg-white/70 dark:bg-dark-surface/80 backdrop-blur-md"
+      className="fixed w-full top-0 z-50 bg-white/70 dark:bg-dark-surface/80 backdrop-blur-md shadow-lg dark:shadow-cyan-900/10"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">

@@ -205,11 +205,11 @@ const Background = () => {
   useEffect(() => {
     controls.start({
       background: isDark ? [
-        // 暗色模式渐变 - 调整为更多蓝青色调
-        'linear-gradient(to bottom right, rgba(15, 23, 42, 0.7), rgba(17, 24, 39, 0.8), rgba(12, 74, 110, 0.7))',
-        'linear-gradient(to bottom right, rgba(12, 74, 110, 0.7), rgba(22, 78, 99, 0.8), rgba(6, 95, 70, 0.7))',
-        'linear-gradient(to bottom right, rgba(30, 58, 138, 0.7), rgba(23, 37, 84, 0.8), rgba(15, 23, 42, 0.7))',
-        'linear-gradient(to bottom right, rgba(15, 23, 42, 0.7), rgba(17, 24, 39, 0.8), rgba(12, 74, 110, 0.7))',
+        // 深色模式渐变 - 调整为与Welcome卡片相匹配的颜色
+        'linear-gradient(to bottom right, rgba(3, 7, 18, 0.8), rgba(8, 47, 73, 0.7), rgba(17, 24, 39, 0.8))',
+        'linear-gradient(to bottom right, rgba(8, 47, 73, 0.8), rgba(12, 74, 110, 0.7), rgba(3, 7, 18, 0.8))',
+        'linear-gradient(to bottom right, rgba(12, 74, 110, 0.7), rgba(8, 47, 73, 0.8), rgba(17, 24, 39, 0.8))',
+        'linear-gradient(to bottom right, rgba(3, 7, 18, 0.8), rgba(8, 47, 73, 0.7), rgba(17, 24, 39, 0.8))',
       ] : [
         // 亮色模式渐变保持不变
         'linear-gradient(to bottom right, rgba(255, 240, 245, 0.9), rgba(230, 230, 250, 0.9), rgba(176, 196, 222, 0.9))',
@@ -227,11 +227,11 @@ const Background = () => {
 
   return (
     <div className="fixed inset-0 min-h-screen w-full overflow-hidden">
-      {/* 动态渐变背景 */}
+      {/* 动态渐变背景 - 更新深色模式颜色 */}
       <motion.div 
         animate={controls}
         className="fixed inset-0 bg-gradient-to-br from-pink-100/90 via-purple-100/90 to-blue-100/90 
-                   dark:from-cyan-950/70 dark:via-blue-950/80 dark:to-slate-950/70"
+                   dark:from-gray-950/80 dark:via-cyan-950/30 dark:to-blue-950/50"
       />
       
       {/* 保留原有的所有动效 */}
@@ -241,9 +241,9 @@ const Background = () => {
       
       {/* 静态光晕 - 调整颜色 */}
       <div className="fixed inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/20 dark:bg-cyan-500/20 rounded-full blur-3xl" />
-        <div className="absolute top-1/3 right-1/3 w-96 h-96 bg-blue-500/20 dark:bg-blue-500/20 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-cyan-500/20 dark:bg-indigo-500/20 rounded-full blur-3xl" />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/20 dark:bg-cyan-600/10 rounded-full blur-3xl" />
+        <div className="absolute top-1/3 right-1/3 w-96 h-96 bg-blue-500/20 dark:bg-blue-600/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-cyan-500/20 dark:bg-indigo-600/10 rounded-full blur-3xl" />
       </div>
 
       {/* 网格效果 */}
