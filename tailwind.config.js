@@ -68,5 +68,13 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addComponents }) {
+      addComponents({
+        '.active-nav-link': {
+          '@apply bg-white/20 dark:bg-gray-800/30 font-medium border border-blue-500 dark:border-cyan-400': {}
+        }
+      })
+    }
+  ],
 } 

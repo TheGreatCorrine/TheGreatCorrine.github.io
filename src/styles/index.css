@@ -34,4 +34,13 @@
 /* 平滑过渡 */
 * {
   transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+/* 导航链接活动状态 */
+.active-nav-link {
+  @apply bg-white/20 dark:bg-gray-800/30 font-medium border border-blue-500 dark:border-cyan-400;
+}
+
+.active-nav-link .active-nav-indicator {
+  @apply w-full;
 } 

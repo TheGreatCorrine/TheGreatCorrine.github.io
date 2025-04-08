@@ -86,9 +86,10 @@ const NavLink = ({ href, children }: NavLinkProps) => (
     smooth={true}
     offset={-70}
     duration={800}
-    className="cursor-pointer px-3 py-2 rounded-md text-gray-700 
-    dark:text-dark-text dark:hover:text-dark-primary 
-    dark:hover:glow-text transition-all"
+    activeClass="active-nav-link"
+    className="cursor-pointer px-3 py-2 rounded-md text-gray-700
+    dark:text-dark-text dark:hover:text-dark-primary
+    transition-all relative hover:bg-white/20 dark:hover:bg-gray-800/30"
   >
     {children}
   </Link>
@@ -102,8 +103,9 @@ const MobileNavLink = ({ href, children }: NavLinkProps) => (
     smooth={true}
     offset={-70}
     duration={800}
-    className="block cursor-pointer px-3 py-2 rounded-md text-gray-700 
-    dark:text-gray-200 hover:text-primary-light 
+    activeClass="active-nav-link"
+    className="block cursor-pointer px-3 py-2 rounded-md text-gray-700
+    dark:text-gray-200 hover:text-primary-light
     dark:hover:text-primary-dark transition-colors"
   >
     {children}

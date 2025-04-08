@@ -14,16 +14,16 @@ const Hero = () => {
   const [showSecondary, setShowSecondary] = useState(false);
   
   const fullText = "Hey! Welcome to my world!\nI am Corrine, a full-stack student developer!";
-  const secondFullText = "I'm passionate about AI, full SDLC lifecycle, and my favorite tech stack includes React, TypeScript, and Node.js.";
+  const secondFullText = "I'm passionate about web development, and my favorite tech stack includes React, TypeScript, and Node.js.";
   
-  // 第一段文本的打字效果
+  // 第一段文本的打字效果 - 速度提高
   useEffect(() => {
     if (index < fullText.length) {
       const typingTimer = setTimeout(() => {
         const nextChar = fullText[index];
         setDisplayText(prev => prev + nextChar);
         setIndex(index + 1);
-      }, 100); // 每个字符之间的延迟
+      }, 50); // 从100ms降至50ms，提高打字速度
       
       return () => clearTimeout(typingTimer);
     } else {
@@ -38,7 +38,7 @@ const Hero = () => {
     }
   }, [index, fullText]);
   
-  // 第二段文本的打字效果
+  // 第二段文本的打字效果 - 也适当加快
   useEffect(() => {
     if (!showSecondary) return;
     
@@ -47,7 +47,7 @@ const Hero = () => {
         const nextChar = secondFullText[secondaryIndex];
         setSecondaryText(prev => prev + nextChar);
         setSecondaryIndex(secondaryIndex + 1);
-      }, 50); // 第二段稍快一些
+      }, 30); // 从50ms降至30ms，进一步提高速度
       
       return () => clearTimeout(typingTimer);
     } else {

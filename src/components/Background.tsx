@@ -139,47 +139,6 @@ const StarField = () => {
   )
 }
 
-// 跟随鼠标星轨
-const MouseTrail = () => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      const { clientX, clientY } = e
-      setMousePosition({ x: clientX, y: clientY })
-    }
-
-    window.addEventListener('mousemove', handleMouseMove)
-    return () => window.removeEventListener('mousemove', handleMouseMove)
-  }, [])
-
-  return (
-    <div className="fixed inset-0 z-[100] pointer-events-none" style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh' }}>
-      <motion.div
-        className="fixed bg-gradient-to-r from-white via-blue-300 to-purple-400 rounded-full"
-        style={{
-          width: 15,
-          height: 15,
-          left: mousePosition.x,
-          top: mousePosition.y,
-          filter: 'blur(2px)',
-          boxShadow: '0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(148, 163, 184, 0.6)',
-          transform: 'translate(-50%, -50%)',
-        }}
-        animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.8, 1, 0.8],
-        }}
-        transition={{
-          duration: 2,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
-    </div>
-  )
-}
-
 const Background = () => {
   const controls = useAnimation()
   const [isDark, setIsDark] = useState(document.documentElement.classList.contains('dark'))
@@ -237,7 +196,6 @@ const Background = () => {
       {/* 保留原有的所有动效 */}
       <StarField />
       <Meteor />
-      <MouseTrail />
       
       {/* 静态光晕 - 调整颜色 */}
       <div className="fixed inset-0">
