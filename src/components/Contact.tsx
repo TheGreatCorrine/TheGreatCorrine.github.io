@@ -65,16 +65,8 @@ const Contact = () => {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.8 }}
       >
-        <div className="border-t border-gray-200 dark:border-gray-700 pt-8 pb-4">
-          <div className="text-center space-y-4">
-            <p className="text-gray-600 dark:text-gray-400 text-lg italic">
-              ;) please email me to request a copy of my resume
-            </p>
-            <p className="text-gray-500 dark:text-gray-500 text-sm">
-              © {new Date().getFullYear()} Corrine. All rights reserved.
-            </p>
-          </div>
-        </div>
+        <h2 className="text-3xl font-bold text-gray-800 dark:text-dark-text mb-4">Under Construction</h2>
+        <p className="text-gray-600 dark:text-gray-300">This section is currently being built. Please check back later!</p>
       </motion.div>
     </section>
   )
