@@ -1,32 +1,33 @@
 /**
- * 03 · 工作以外的经历（社团、学生组织、志愿者等）。
- * 整张卡片可点击，跳到 url（组织官网）。最新的放最前面。
+ * 03 · 工作以外的经历：社团、学生组织、志愿者、开源项目（比如 GSoC、Mentorship 项目）等。
+ * 填了 url 的条目整张卡片可点击，跳到组织官网；description、tags 可以留空。
+ * 最新的放最前面，想加新的就往数组里加一项。
  */
 export interface Involvement {
   range: string;
   role: string;
   org: string;
-  url: string;
-  description: string;
-  tags: string[];
+  url?: string;
+  description?: string;
+  tags?: string[];
 }
 
-// TODO: 补充真实的职位、时间、描述、官网链接
 export const involvement: Involvement[] = [
   {
-    range: 'TODO – Present',
-    role: 'TODO: Your Role',
-    org: 'Women in Computer Science (WiCS)',
-    url: 'https://example.com',
-    description: 'TODO: one or two sentences on what you organized, who it served, and what came of it.',
-    tags: ['Leadership', 'Event Planning', 'Community'],
+    range: 'Oct 2026 – Present',
+    role: 'Back End Developer',
+    org: 'UofT Women in Computer Science (WiCS)',
+    // TODO: 填 WiCS 官网链接后，这张卡片就能点了
+    url: '',
+    description: '',
+    tags: [],
   },
   {
-    range: 'TODO',
-    role: 'Mentorship Program Coordinator',
-    org: 'Woodsworth College',
+    range: 'May 2024 – Apr 2025',
+    role: 'Student Mentor',
+    org: 'Woodsworth College, University of Toronto',
     url: 'https://www.wdw.utoronto.ca/',
-    description: 'TODO: one or two sentences on the program you coordinated, how many students it reached, and what you changed.',
-    tags: ['Mentorship', 'Program Coordination', 'Student Life'],
+    description: '',
+    tags: [],
   },
 ];

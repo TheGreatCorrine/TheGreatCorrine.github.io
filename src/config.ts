@@ -1,6 +1,8 @@
 /**
  * 站点设置：名字、邮箱、社交链接、导航。
  */
+import { featured } from './content/featured';
+
 export const siteConfig = {
   name: 'Corrine Xiang',
   shortName: 'Corrine',
@@ -22,7 +24,7 @@ export const navLinks = [
   { name: 'Involvement', url: '/#involvement' },
   { name: 'Projects', url: '/#projects' },
   { name: 'Kind Words', url: '/#testimonials' },
-];
+].filter(link => link.name !== 'Projects' || featured.length > 0);
 
 export const srConfig = (delay = 200, viewFactor = 0.25) => ({
   origin: 'bottom',

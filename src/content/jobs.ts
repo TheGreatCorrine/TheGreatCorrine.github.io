@@ -9,14 +9,14 @@ export interface Job {
   bullets: string[];
 }
 
-// TODO: 每段经历补 2–4 条你做了什么、用了什么、带来了什么结果
+// TODO: 每段经历在 bullets 里补 2–4 条你做了什么、用了什么、带来了什么结果（空着就不显示）
 export const jobs: Job[] = [
   {
     tab: 'Terminal',
     company: 'Terminal',
     title: 'Platform Engineer Intern',
     range: 'Jan – Aug 2026',
-    bullets: ['TODO: what you built on the platform team, and the impact it had.'],
+    bullets: [],
   },
   {
     tab: 'BSH',
@@ -24,7 +24,7 @@ export const jobs: Job[] = [
     title: 'AI Engineer Intern',
     url: 'https://www.bsh-group.com/',
     range: 'May – Aug 2025',
-    bullets: ['TODO: the AI systems you worked on, and the results.'],
+    bullets: [],
   },
   {
     tab: 'Rotman',
@@ -32,14 +32,14 @@ export const jobs: Job[] = [
     title: 'Student Developer',
     url: 'https://www.rotman.utoronto.ca/',
     range: 'Jan – Apr 2025',
-    bullets: ['TODO: what you built for Rotman.'],
+    bullets: [],
   },
   {
     tab: 'Re:Pair',
     company: 'Re:Pair Genomics',
     title: 'Full-Stack Development Intern',
     range: 'Sep – Dec 2024',
-    bullets: ['TODO: the full-stack features you shipped.'],
+    bullets: [],
   },
   {
     tab: 'CITIC',
@@ -47,6 +47,6 @@ export const jobs: Job[] = [
     title: 'Summer Analyst Intern',
     url: 'https://www.citics.com/',
     range: 'May – Aug 2023',
-    bullets: ['TODO: what you worked on as a summer analyst.'],
+    bullets: [],
   },
 ];

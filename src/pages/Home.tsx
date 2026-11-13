@@ -6,6 +6,7 @@ import Jobs from '../components/sections/Jobs';
 import Featured from '../components/sections/Featured';
 import Involvement from '../components/sections/Involvement';
 import Testimonials from '../components/sections/Testimonials';
+import { featured } from '../content/featured';
 
 const StyledMainContainer = styled.main`
   counter-reset: section;
@@ -18,7 +19,7 @@ const Home = () => (
       <About />
       <Jobs />
       <Involvement />
-      <Featured />
+      {featured.length > 0 && <Featured />}
       <Testimonials />
     </StyledMainContainer>
   </Layout>

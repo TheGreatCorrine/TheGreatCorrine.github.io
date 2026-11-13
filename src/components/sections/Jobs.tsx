@@ -236,11 +236,13 @@ const Jobs = () => {
                   </span>
                 </h3>
                 <p className="range">{range}</p>
-                <ul>
-                  {bullets.map((b, k) => (
-                    <li key={k} dangerouslySetInnerHTML={{ __html: b }} />
-                  ))}
-                </ul>
+                {bullets.length > 0 && (
+                  <ul>
+                    {bullets.map((b, k) => (
+                      <li key={k} dangerouslySetInnerHTML={{ __html: b }} />
+                    ))}
+                  </ul>
+                )}
               </StyledTabPanel>
             ) : null,
           )}

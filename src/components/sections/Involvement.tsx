@@ -145,8 +145,12 @@ const StyledItem = styled.li`
     }
   }
 
+  .card-title {
+    color: var(--text-strong);
+  }
+
   .org {
-    white-space: nowrap;
+    white-space: normal;
   }
 
   p {
@@ -210,17 +214,25 @@ const Involvement = () => {
               <p className="range">{range}</p>
               <div className="content">
                 <h3>
-                  <a className="card-link" href={url} target="_blank" rel="noreferrer">
-                    {role} · <span className="org">{org}</span>
-                    <Arrow />
-                  </a>
+                  {url ? (
+                    <a className="card-link" href={url} target="_blank" rel="noreferrer">
+                      {role} · <span className="org">{org}</span>
+                      <Arrow />
+                    </a>
+                  ) : (
+                    <span className="card-title">
+                      {role} · <span className="org">{org}</span>
+                    </span>
+                  )}
                 </h3>
-                <p>{description}</p>
-                <ul className="tags" aria-label="Skills">
-                  {tags.map(t => (
-                    <li key={t}>{t}</li>
-                  ))}
-                </ul>
+                {description && <p>{description}</p>}
+                {tags && tags.length > 0 && (
+                  <ul className="tags" aria-label="Skills">
+                    {tags.map(t => (
+                      <li key={t}>{t}</li>
+                    ))}
+                  </ul>
+                )}
               </div>
             </div>
           </StyledItem>

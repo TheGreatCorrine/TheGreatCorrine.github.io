@@ -8,32 +8,14 @@ export interface FeaturedProject {
   external?: string;
 }
 
-// TODO: 换成你的项目
-export const featured: FeaturedProject[] = [
-  {
-    title: 'Course Planner',
-    description:
-      'A web app that turns degree requirements into a term-by-term plan, flags prerequisite conflicts, and exports the schedule to your calendar.',
-    tech: ['React', 'TypeScript', 'Supabase', 'Vite'],
-    cover: 'images/featured-1.svg',
-    github: 'https://github.com/TheGreatCorrine',
-    external: 'https://example.com',
-  },
-  {
-    title: 'Transit Delay Map',
-    description:
-      'An interactive map of subway delays by station and hour, built from open city data and updated nightly.',
-    tech: ['D3.js', 'Python', 'Pandas', 'GitHub Actions'],
-    cover: 'images/featured-2.svg',
-    github: 'https://github.com/TheGreatCorrine',
-  },
-  {
-    title: 'Study Timer',
-    description:
-      'A minimal focus timer browser extension that tracks sessions and shows a weekly summary of where your time went.',
-    tech: ['TypeScript', 'Chrome Extensions API', 'Chart.js'],
-    cover: 'images/featured-3.svg',
-    github: 'https://github.com/TheGreatCorrine',
-    external: 'https://example.com',
-  },
-];
+// 列表为空时，整个 Projects 区块和导航里的 Projects 都会隐藏。
+// 加项目的写法示例（图片放 public/images/ 下）：
+// {
+//   title: 'Course Planner',
+//   description: 'A web app that turns degree requirements into a term-by-term plan.',
+//   tech: ['React', 'TypeScript'],
+//   cover: 'images/featured-1.svg',
+//   github: 'https://github.com/TheGreatCorrine/...',
+//   external: 'https://...',
+// },
+export const featured: FeaturedProject[] = [];
