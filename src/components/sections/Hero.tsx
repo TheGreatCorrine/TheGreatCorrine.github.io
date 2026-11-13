@@ -31,10 +31,6 @@ const StyledHeroSection = styled.section`
     }
   }
 
-  h1 .hi {
-    text-transform: uppercase;
-  }
-
   /* 标题：后面错开一圈橙色描边，再加一层很淡的投影 */
   h2 {
     position: relative;
@@ -107,9 +103,7 @@ const Hero = () => {
   const mounted = useMounted(navDelay);
 
   const items = [
-    <h1>
-      <span className="hi">{hero.greeting}</span> {hero.name}
-    </h1>,
+    <h1>{hero.name}</h1>,
     <h2 className="big-heading" data-text={`${hero.title}.`}>
       {hero.title}
       <span className="dot">.</span>

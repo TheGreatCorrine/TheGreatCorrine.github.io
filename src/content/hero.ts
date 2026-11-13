@@ -3,7 +3,6 @@
  * facts 里每一项是一行；value 里可以写简单的 HTML（比如 <span class="muted">）。
  */
 export const hero = {
-  greeting: 'Hi, I’m',
   name: 'CORRINE X.',
   title: 'Software Engineer',
   facts: [
