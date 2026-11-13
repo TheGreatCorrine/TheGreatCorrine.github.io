@@ -55,7 +55,8 @@ export const work: ExperienceItem[] = [
     role: 'Student Developer',
     org: 'Rotman School of Management',
     url: 'https://www.rotman.utoronto.ca/',
-    meta: '4 months',
+    logo: 'images/logos/rotman.png',
+    meta: 'Part-time · 4 months',
     description: 'Placeholder: one sentence on the team and what you worked on.',
     bullets: [
       'Placeholder: something you built, the tools you used, and the result.',
@@ -67,7 +68,8 @@ export const work: ExperienceItem[] = [
     range: 'Sep – Dec 2024',
     role: 'Full-Stack Development Intern',
     org: 'Re:Pair Genomics',
-    meta: '4 months',
+    logo: 'images/logos/repair.png',
+    meta: 'Part-time Intern · 4 months',
     description: 'Placeholder: one sentence on the team and what you worked on.',
     bullets: [
       'Placeholder: something you built, the tools you used, and the result.',
@@ -80,7 +82,8 @@ export const work: ExperienceItem[] = [
     role: 'Summer Analyst Intern',
     org: 'CITIC Securities',
     url: 'https://www.citics.com/',
-    meta: '4 months',
+    logo: 'images/logos/citic.png',
+    meta: 'Summer Intern · 4 months',
     description: 'Placeholder: one sentence on the team and what you worked on.',
     bullets: [
       'Placeholder: something you built, the tools you used, and the result.',
