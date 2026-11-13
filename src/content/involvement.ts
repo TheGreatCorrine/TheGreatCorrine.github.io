@@ -10,7 +10,8 @@ export const involvement: ExperienceItem[] = [
     range: 'Oct 2026 – Present',
     role: 'Back End Developer',
     org: 'UofT Women in Computer Science (WiCS)',
-    // TODO: 加上 url（WiCS 官网），展开后就会出现 Visit 按钮
+    url: 'https://www.uoftwics.com/',
+    logo: 'images/logos/wics.png',
     meta: 'Volunteer · Ongoing',
     description: 'Placeholder: one sentence on what you do here and who it helps.',
     bullets: [
@@ -24,6 +25,7 @@ export const involvement: ExperienceItem[] = [
     role: 'Student Mentor',
     org: 'Woodsworth College, University of Toronto',
     url: 'https://www.wdw.utoronto.ca/',
+    logo: 'images/logos/woodsworth.png',
     meta: 'Volunteer · 1 year',
     description: 'Placeholder: one sentence on what you do here and who it helps.',
     bullets: [
