@@ -237,6 +237,30 @@ const StyledItem = styled.li`
     min-width: 0;
   }
 
+  /* 横版 logo：白底圆角卡片 */
+  .banner {
+    display: inline-flex;
+    align-items: center;
+    max-width: 100%;
+    height: 64px;
+    margin-bottom: 18px;
+    padding: 10px 18px;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 8px 18px -12px rgba(20, 20, 19, 0.35);
+
+    img {
+      width: auto;
+      max-width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    @media (max-width: 600px) {
+      height: 52px;
+    }
+  }
+
   .description {
     margin: 0 0 12px;
     color: var(--text);
@@ -336,7 +360,7 @@ const WorkAccordion = ({ id, heading, items }: Props) => {
 
       <ol className="list">
         {items.map((item, i) => {
-          const { range, role, org, url, description, bullets, tags, logo, meta } = item;
+          const { range, role, org, url, description, bullets, tags, logo, banner, meta } = item;
           const open = openIndex === i;
           const headId = `${id}-head-${i}`;
           const bodyId = `${id}-body-${i}`;
@@ -373,6 +397,11 @@ const WorkAccordion = ({ id, heading, items }: Props) => {
                     </div>
 
                     <div className="details">
+                      {banner && (
+                        <div className="banner">
+                          <img src={asset(banner)} alt={org} loading="lazy" />
+                        </div>
+                      )}
                       {description && <p className="description">{description}</p>}
                       {bullets && bullets.length > 0 && (
                         <ul className="bullets">

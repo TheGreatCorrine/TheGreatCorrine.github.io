@@ -14,7 +14,9 @@ export const work: ExperienceItem[] = [
     role: 'Software Engineer Intern',
     org: 'Kinaxis',
     url: 'https://www.kinaxis.com/',
-    meta: 'Incoming',
+    logo: 'images/logos/kinaxis.png',
+    banner: 'images/logos/kinaxis-banner.png',
+    meta: 'Full-time Co-op · Incoming',
     description: 'Placeholder: one sentence on the team and what you worked on.',
     bullets: [
       'Placeholder: something you built, the tools you used, and the result.',
@@ -26,7 +28,7 @@ export const work: ExperienceItem[] = [
     range: 'Jan – Aug 2026',
     role: 'Platform Engineer Intern',
     org: 'Terminal',
-    meta: '8 months',
+    meta: 'Full-time Co-op · 8 months',
     description: 'Placeholder: one sentence on the team and what you worked on.',
     bullets: [
       'Placeholder: something you built, the tools you used, and the result.',
@@ -39,7 +41,7 @@ export const work: ExperienceItem[] = [
     role: 'AI Engineer Intern',
     org: 'BSH Home Appliances',
     url: 'https://www.bsh-group.com/',
-    meta: '4 months',
+    meta: 'Summer Intern · 4 months',
     description: 'Placeholder: one sentence on the team and what you worked on.',
     bullets: [
       'Placeholder: something you built, the tools you used, and the result.',

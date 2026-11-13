@@ -16,6 +16,8 @@ export interface ExperienceItem {
   tags?: string[];
   /** 公司 logo 图片，放在 public/images/logos/ 下，比如 'images/logos/kinaxis.svg'。不填就显示公司缩写方块 */
   logo?: string;
+  /** 展开后显示在描述上方的横版 logo / banner，比如 'images/logos/kinaxis-banner.png' */
+  banner?: string;
   /** 展开后 logo 下面的一行小字，比如 'Toronto, ON · 8 months' */
   meta?: string;
 }
