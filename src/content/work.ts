@@ -15,7 +15,6 @@ export const work: ExperienceItem[] = [
     org: 'Kinaxis',
     url: 'https://www.kinaxis.com/',
     logo: 'images/logos/kinaxis.png',
-    banner: 'images/logos/kinaxis-banner.png',
     meta: 'Full-time Co-op · Incoming',
     description: 'Placeholder: one sentence on the team and what you worked on.',
     bullets: [
