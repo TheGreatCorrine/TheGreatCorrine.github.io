@@ -24,7 +24,6 @@ export const navLinks = [
   { name: 'Work', url: '/#work' },
   { name: 'Experience', url: '/#experience' },
   { name: 'Projects', url: '/#projects' },
-  { name: 'Testimonials', url: '/#testimonials' },
 ].filter(link => link.name !== 'Projects' || featured.length > 0);
 
 export const srConfig = (delay = 200, viewFactor = 0.25) => ({
