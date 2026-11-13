@@ -29,7 +29,7 @@ const Layout = ({ children, title }: Props) => {
   const finishLoading = useCallback(() => setIsLoading(false), []);
 
   useEffect(() => {
-    document.title = title ? `${title} | Corrine` : 'Corrine';
+    document.title = title ? `${title} | Corrine Xiang` : 'Corrine Xiang';
   }, [title]);
 
   // 跳到 URL 里的 #锚点（比如从 /archive 点 About 回来）

@@ -191,7 +191,7 @@ const Jobs = () => {
 
       <div className="inner">
         <StyledTabList role="tablist" aria-label="Job tabs" onKeyDown={onKeyDown}>
-          {jobs.map(({ company }, i) => (
+          {jobs.map(({ tab, company }, i) => (
             <StyledTabButton
               key={company}
               $active={activeTabId === i}
@@ -207,7 +207,7 @@ const Jobs = () => {
               tabIndex={activeTabId === i ? 0 : -1}
               aria-selected={activeTabId === i}
               aria-controls={`panel-${i}`}>
-              <span>{company}</span>
+              <span>{tab}</span>
             </StyledTabButton>
           ))}
           <StyledHighlight $active={activeTabId} />
@@ -226,9 +226,13 @@ const Jobs = () => {
                   <span>{title}</span>
                   <span className="company">
                     &nbsp;@&nbsp;
-                    <a href={url} className="inline-link">
-                      {company}
-                    </a>
+                    {url ? (
+                      <a href={url} className="inline-link">
+                        {company}
+                      </a>
+                    ) : (
+                      company
+                    )}
                   </span>
                 </h3>
                 <p className="range">{range}</p>

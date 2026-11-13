@@ -4,8 +4,8 @@ import Hero from '../components/sections/Hero';
 import About from '../components/sections/About';
 import Jobs from '../components/sections/Jobs';
 import Featured from '../components/sections/Featured';
-import Projects from '../components/sections/Projects';
-import Contact from '../components/sections/Contact';
+import Involvement from '../components/sections/Involvement';
+import Testimonials from '../components/sections/Testimonials';
 
 const StyledMainContainer = styled.main`
   counter-reset: section;
@@ -17,9 +17,9 @@ const Home = () => (
       <Hero />
       <About />
       <Jobs />
+      <Involvement />
       <Featured />
-      <Projects />
-      <Contact />
+      <Testimonials />
     </StyledMainContainer>
   </Layout>
 );

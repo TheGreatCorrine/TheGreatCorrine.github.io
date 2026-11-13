@@ -22,10 +22,11 @@ npm run build    # 打包到 dist/
 | 名字、邮箱、社交链接、导航 | `src/config.ts` |
 | 开场介绍 | `src/content/hero.ts` |
 | About 文字和技能 | `src/content/about.ts` |
-| 工作 / 实习经历 | `src/content/jobs.ts` |
-| 精选项目（大图） | `src/content/featured.ts` |
-| 其他项目 + Archive 页 | `src/content/projects.ts` |
-| Contact 文案 | `src/content/contact.ts` |
+| 02 工作 / co-op 经历 | `src/content/jobs.ts` |
+| 03 课外经历（Beyond Work） | `src/content/involvement.ts` |
+| 04 精选项目 | `src/content/featured.ts` |
+| 05 评价 | `src/content/testimonials.ts` |
+| 页脚的 Get In Touch | `src/components/Footer.tsx` |
 | 颜色、字体 | `src/styles/variables.ts` |
 | Logo | `src/components/icons/index.tsx` 里的 `IconLogo`、`IconLoader`，以及 `public/favicon.svg` |
 
@@ -41,4 +42,6 @@ npm run build    # 打包到 dist/
 
 第一次需要在仓库 **Settings → Pages → Build and deployment → Source** 选 **GitHub Actions**。
 
-`npm run build` 会把 `index.html` 复制成 `404.html`，这样直接打开 `/archive` 或刷新页面时不会 404。
+`npm run build` 会把 `index.html` 复制成 `404.html`，这样打开不存在的地址时会显示网站自己的 404 页面。
+
+账号的 Actions 被锁住期间，网站从 `gh-pages` 分支发布（Settings → Pages → Deploy from a branch → `gh-pages`）。这个分支只放 `npm run build` 生成的 `dist/` 内容，**不要合并进 `main`**。
