@@ -31,11 +31,37 @@ const StyledHeroSection = styled.section`
     }
   }
 
+  h1 .hi {
+    text-transform: uppercase;
+  }
+
+  /* 标题：后面错开一圈橙色描边，再加一层很淡的投影 */
   h2 {
+    position: relative;
+    display: inline-block;
     margin: 0;
+    text-shadow: 0 0.06em 0.14em rgba(20, 20, 19, 0.14);
 
     .dot {
       color: var(--accent);
+    }
+
+    &:before {
+      content: attr(data-text);
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: -1;
+      color: transparent;
+      -webkit-text-stroke: max(1px, 0.022em) var(--accent);
+      text-shadow: none;
+      transform: translate(0.055em, 0.055em);
+      transition: transform 0.3s var(--easing);
+      pointer-events: none;
+    }
+
+    &:hover:before {
+      transform: translate(0.035em, 0.035em);
     }
   }
 
@@ -81,8 +107,10 @@ const Hero = () => {
   const mounted = useMounted(navDelay);
 
   const items = [
-    <h1>{hero.name}</h1>,
-    <h2 className="big-heading">
+    <h1>
+      <span className="hi">{hero.greeting}</span> {hero.name}
+    </h1>,
+    <h2 className="big-heading" data-text={`${hero.title}.`}>
       {hero.title}
       <span className="dot">.</span>
     </h2>,

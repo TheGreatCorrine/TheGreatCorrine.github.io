@@ -7,6 +7,7 @@ import Nav from './Nav';
 import Social from './Social';
 import Email from './Email';
 import Footer from './Footer';
+import Spotlight from './Spotlight';
 
 const StyledContent = styled.div`
   display: flex;
@@ -68,6 +69,7 @@ const Layout = ({ children, title }: Props) => {
         <Loader finishLoading={finishLoading} />
       ) : (
         <StyledContent>
+          <Spotlight />
           <Nav isHome={isHome} />
           <Social isHome={isHome} />
           <Email isHome={isHome} />
