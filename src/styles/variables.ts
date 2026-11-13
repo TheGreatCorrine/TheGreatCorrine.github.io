@@ -31,6 +31,8 @@ const variables = css`
     --font-mono: 'JetBrains Mono', 'SF Mono', 'Fira Code', 'Roboto Mono', monospace;
     /* 想要更“Claude”的气质，可以把大标题换成衬线体，比如 'Source Serif 4', Georgia, serif */
     --font-display: var(--font-sans);
+    /* 区块标题用的柔软衬线 */
+    --font-heading: 'Fraunces Variable', Georgia, 'Songti SC', serif;
 
     --fz-xxs: 12px;
     --fz-xs: 13px;

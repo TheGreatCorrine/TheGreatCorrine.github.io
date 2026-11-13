@@ -163,13 +163,20 @@ const GlobalStyle = createGlobalStyle`
     position: relative;
     margin: 10px 0 40px;
     width: 100%;
-    font-family: var(--font-display);
-    font-size: clamp(26px, 5vw, var(--fz-heading));
+    /* 区块标题：柔软衬线 Fraunces，整句橙色斜体 */
+    color: var(--accent-text);
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-weight: 500;
+    font-variation-settings: 'SOFT' 100;
+    font-size: clamp(24px, 4.5vw, 30px);
+    letter-spacing: -0.005em;
     white-space: nowrap;
 
     &:before {
       position: relative;
-      bottom: 4px;
+      bottom: 3px;
+      font-style: normal;
       counter-increment: section;
       content: '0' counter(section) '.';
       margin-right: 10px;
