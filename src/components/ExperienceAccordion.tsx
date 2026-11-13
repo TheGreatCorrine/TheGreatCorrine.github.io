@@ -4,12 +4,65 @@ import type { ExperienceItem } from '../content/types';
 import { mixins } from '../styles/mixins';
 import { asset } from '../utils';
 import useReveal from '../hooks/useReveal';
-import { StyledSection, Arrow } from './ExperienceSection';
+
+const StyledSection = styled.section`
+  position: relative;
+  max-width: 860px;
+
+  /* 跟随鼠标的暖色光斑，给毛玻璃卡片一个可以“透”出来的背景 */
+  .spotlight {
+    position: absolute;
+    inset: 80px -120px 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+      radial-gradient(420px circle at var(--mx, 30%) var(--my, 40%), rgba(217, 119, 87, 0.16), transparent 70%),
+      radial-gradient(360px circle at 85% 75%, rgba(196, 160, 120, 0.14), transparent 70%);
+    transition: background 0.1s linear;
+
+    @media (max-width: 1080px) {
+      inset: 80px 0 0;
+    }
+
+    /* 触屏设备没有悬停，不需要光斑 */
+    @media (hover: none), (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  /* 标题较长时（比如 Community & Open Source）在手机上允许换行 */
+  .numbered-heading {
+    @media (max-width: 600px) {
+      white-space: normal;
+
+      &:after {
+        display: none;
+      }
+    }
+  }
+
+  .list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 12px;
+  }
+
+  @media (hover: hover) {
+    .list:hover > li:not(:hover) {
+      opacity: 0.5;
+    }
+  }
+`;
 
 /* 缩写方块的底色，按顺序轮流使用 */
 const logoColors = ['#C15F3C', '#3D3D3A', '#8A7A5E', '#5E5D59', '#A8674E', '#6F6E68'];
 
 const abbr = (org: string) => {
+  // 名字里有括号缩写的，比如 “(WiCS)”，直接用它
+  const paren = org.match(/\(([A-Za-z]{2,6})\)/);
+  if (paren) return paren[1];
   const words = org.replace(/[^A-Za-z0-9: ]/g, '').split(/[\s:]+/).filter(Boolean);
   if (words.length === 1) return words[0][0].toUpperCase();
   if (/^[A-Z]{2,5}$/.test(words[0])) return words[0];
@@ -328,6 +381,16 @@ const StyledItem = styled.li`
   }
 `;
 
+const Arrow = () => (
+  <svg className="arrow" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+    <path
+      fillRule="evenodd"
+      d="M5.22 14.78a.75.75 0 0 0 1.06 0l7.22-7.22v5.69a.75.75 0 0 0 1.5 0v-7.5a.75.75 0 0 0-.75-.75h-7.5a.75.75 0 0 0 0 1.5h5.69l-7.22 7.22a.75.75 0 0 0 0 1.06Z"
+      clipRule="evenodd"
+    />
+  </svg>
+);
+
 const Chevron = () => (
   <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
     <path d="M4 6l4 4 4-4" />
@@ -340,8 +403,8 @@ interface Props {
   items: ExperienceItem[];
 }
 
-/** 02 Work：点击展开的经历列表，一次只展开一条。展开后显示 logo、描述、要点、标签和官网按钮。 */
-const WorkAccordion = ({ id, heading, items }: Props) => {
+/** 02 Work 和 03 Experience 共用：点击展开的经历列表，一次只展开一条。展开后显示 logo、描述、要点、标签和官网按钮。 */
+const ExperienceAccordion = ({ id, heading, items }: Props) => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const revealContainer = useRef<HTMLElement>(null);
   useReveal([revealContainer]);
@@ -441,4 +504,4 @@ const WorkAccordion = ({ id, heading, items }: Props) => {
   );
 };
 
-export default WorkAccordion;
+export default ExperienceAccordion;

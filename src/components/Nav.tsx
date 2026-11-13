@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
-import { navLinks, siteConfig } from '../config';
+import { navLinks } from '../config';
 import { mixins } from '../styles/mixins';
-import { asset } from '../utils';
 import useScrollDirection, { ScrollDirection } from '../hooks/useScrollDirection';
 import usePrefersReducedMotion from '../hooks/usePrefersReducedMotion';
 import useMounted from '../hooks/useMounted';
 import FadeIn from './FadeIn';
 import Menu from './Menu';
+import ResumeButton from './ResumeButton';
 import { IconLogo } from './icons';
 
 const StyledHeader = styled.header<{ $dir: ScrollDirection; $top: boolean }>`
@@ -184,13 +184,7 @@ const Nav = ({ isHome }: { isHome: boolean }) => {
             ))}
           </ol>
           <FadeIn show={show} variant={fadeDown ?? 'fade'} delay={animate ? navLinks.length * 100 : 0}>
-            <a
-              className="resume-button"
-              href={asset(siteConfig.resume)}
-              target="_blank"
-              rel="noopener noreferrer">
-              Resume
-            </a>
+            <ResumeButton className="resume-button" />
           </FadeIn>
         </StyledLinks>
 

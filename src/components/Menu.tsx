@@ -1,10 +1,11 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { navLinks, siteConfig } from '../config';
+import { navLinks } from '../config';
 import { mixins } from '../styles/mixins';
-import { KEY_CODES, asset } from '../utils';
+import { KEY_CODES } from '../utils';
 import useOnClickOutside from '../hooks/useOnClickOutside';
+import ResumeButton from './ResumeButton';
 
 const StyledMenu = styled.div`
   display: none;
@@ -150,10 +151,13 @@ const StyledSidebar = styled.aside<{ $menuOpen: boolean }>`
     }
   }
 
+  .resume-wrap {
+    margin: 10% auto 0;
+  }
+
   .resume-link {
     ${mixins.bigButton};
     padding: 18px 50px;
-    margin: 10% auto 0;
     width: max-content;
   }
 `;
@@ -181,7 +185,7 @@ const Menu = () => {
       if (e.key !== KEY_CODES.TAB || !menuOpen || !navRef.current || !buttonRef.current) return;
 
       // 菜单打开时把焦点锁在菜单里
-      const focusables = [buttonRef.current, ...Array.from(navRef.current.querySelectorAll('a'))];
+      const focusables = [buttonRef.current, ...Array.from(navRef.current.querySelectorAll<HTMLElement>('a, button'))];
       const first = focusables[0];
       const last = focusables[focusables.length - 1];
       if (e.shiftKey && document.activeElement === first) {
@@ -228,14 +232,9 @@ const Menu = () => {
                 </li>
               ))}
             </ol>
-            <a
-              href={asset(siteConfig.resume)}
-              className="resume-link"
-              target="_blank"
-              rel="noopener noreferrer"
-              tabIndex={menuOpen ? 0 : -1}>
-              Resume
-            </a>
+            <div className="resume-wrap">
+              <ResumeButton className="resume-link" align="center" tabIndex={menuOpen ? 0 : -1} />
+            </div>
           </nav>
         </StyledSidebar>
       </div>

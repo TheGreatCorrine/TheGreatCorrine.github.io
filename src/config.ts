@@ -7,8 +7,6 @@ export const siteConfig = {
   name: 'Corrine Xiang',
   shortName: 'Corrine',
   email: 'corrine.xiang@mail.utoronto.ca',
-  // 放在 public/ 下的简历文件
-  resume: 'resume.pdf',
 };
 
 export type SocialName = 'GitHub' | 'Linkedin' | 'Email' | 'Instagram' | 'Twitter' | 'Codepen';

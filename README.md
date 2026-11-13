@@ -23,7 +23,7 @@ npm run build    # 打包到 dist/
 | 开场介绍 | `src/content/hero.ts` |
 | About 文字和技能 | `src/content/about.ts` |
 | 02 Work Experience（co-op / 实习） | `src/content/work.ts` |
-| 03 Community & Open Source（社团、GSoC 等） | `src/content/involvement.ts` |
+| 03 Experience（社团、志愿者、GSoC 等） | `src/content/involvement.ts` |
 | 02、03 的区块标题 | `src/pages/Home.tsx` |
 | 04 精选项目 | `src/content/featured.ts` |
 | 05 评价 | `src/content/testimonials.ts` |
@@ -35,7 +35,8 @@ npm run build    # 打包到 dist/
 
 - `public/images/me.svg` → 换成你的照片（比如 `me.jpg`，然后改 `about.ts` 里的 `photo`）
 - `public/images/featured-*.svg` → 项目截图，建议 16:10
-- `public/resume.pdf` → 你的简历
+- 公司 logo → `public/images/logos/`，在 `work.ts` / `involvement.ts` 里用 `logo` 字段引用
+- Resume 按钮不链接文件，点了会弹出提示请访客发邮件索取（`src/components/ResumeButton.tsx`）
 
 ## 部署
 

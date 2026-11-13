@@ -1,7 +1,7 @@
 /**
- * 03 · Community：工作以外的经历：社团、学生组织、志愿者、开源项目（比如 GSoC、Mentorship 项目）等。
- * 填了 url 的条目整张卡片可点击，跳到组织官网；description、tags 可以留空。
- * 最新的放最前面，想加新的就往数组里加一项。
+ * 03 · Experience：工作以外的经历：社团、学生组织、志愿者、开源项目（比如 GSoC、Mentorship 项目）等。
+ * 和 02 Work 一样点击展开；字段说明见 work.ts。最新的放最前面，想加新的就往数组里加一项。
+ * TODO: 把 'Placeholder' 换成真实内容；有 logo 的话放进 public/images/logos/ 再填 logo。
  */
 import type { ExperienceItem } from './types';
 
@@ -10,12 +10,26 @@ export const involvement: ExperienceItem[] = [
     range: 'Oct 2026 – Present',
     role: 'Back End Developer',
     org: 'UofT Women in Computer Science (WiCS)',
-    // TODO: 加上 url（WiCS 官网），这张卡片就能点了
+    // TODO: 加上 url（WiCS 官网），展开后就会出现 Visit 按钮
+    meta: 'Volunteer · Ongoing',
+    description: 'Placeholder: one sentence on what you do here and who it helps.',
+    bullets: [
+      'Placeholder: something you organized or built, and the result.',
+      'Placeholder: another highlight, ideally with a number (e.g. mentored 12 first-years).',
+    ],
+    tags: ['Placeholder', 'Skills'],
   },
   {
     range: 'May 2024 – Apr 2025',
     role: 'Student Mentor',
     org: 'Woodsworth College, University of Toronto',
     url: 'https://www.wdw.utoronto.ca/',
+    meta: 'Volunteer · 1 year',
+    description: 'Placeholder: one sentence on what you do here and who it helps.',
+    bullets: [
+      'Placeholder: something you organized or built, and the result.',
+      'Placeholder: another highlight, ideally with a number (e.g. mentored 12 first-years).',
+    ],
+    tags: ['Placeholder', 'Skills'],
   },
 ];
