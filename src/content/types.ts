@@ -14,4 +14,8 @@ export interface ExperienceItem {
   bullets?: string[];
   /** 技能标签 */
   tags?: string[];
+  /** 公司 logo 图片，放在 public/images/logos/ 下，比如 'images/logos/kinaxis.svg'。不填就显示公司缩写方块 */
+  logo?: string;
+  /** 展开后 logo 下面的一行小字，比如 'Toronto, ON · 8 months' */
+  meta?: string;
 }

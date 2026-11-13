@@ -1,17 +1,20 @@
 /**
  * 02 · Work：co-op / 实习 / 工作经历，最新的放最前面。
- * 填了 url 的条目整张卡片可点击，跳到公司官网。
- * description、bullets、tags 都可以留空，留空的部分不会显示。
+ * 每条点击后展开，显示 logo、description、bullets、tags 和官网按钮（填了 url 才有）。
+ * 除了 range / role / org，其他都可以留空，留空的部分不会显示。
+ * logo：把图片放进 public/images/logos/，然后写 logo: 'images/logos/xxx.png'；不写就显示公司缩写方块。
+ * meta：logo 下面的一行小字，比如 'Toronto, ON · 8 months'。
  */
 import type { ExperienceItem } from './types';
 
-// TODO: 每段经历可以补一句 description，或者 2–4 条 bullets，再加几个技术栈 tags
+// TODO: 每段经历可以补 description、2–4 条 bullets、技术栈 tags，以及 logo 和 meta
 export const work: ExperienceItem[] = [
   {
     range: 'Starting Jan 2027',
     role: 'Software Engineer Intern',
     org: 'Kinaxis',
     url: 'https://www.kinaxis.com/',
+    meta: 'Incoming',
   },
   {
     range: 'Jan – Aug 2026',

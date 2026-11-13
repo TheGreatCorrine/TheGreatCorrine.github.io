@@ -4,7 +4,7 @@ import type { ExperienceItem } from '../content/types';
 import { mixins } from '../styles/mixins';
 import useReveal from '../hooks/useReveal';
 
-const StyledSection = styled.section`
+export const StyledSection = styled.section`
   position: relative;
   max-width: 860px;
 
@@ -209,7 +209,7 @@ const StyledItem = styled.li`
   }
 `;
 
-const Arrow = () => (
+export const Arrow = () => (
   <svg className="arrow" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
     <path
       fillRule="evenodd"
