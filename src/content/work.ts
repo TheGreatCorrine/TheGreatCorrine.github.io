@@ -27,6 +27,7 @@ export const work: ExperienceItem[] = [
     range: 'Jan – Aug 2026',
     role: 'Platform Engineer Intern',
     org: 'Terminal',
+    logo: 'images/logos/terminal.png',
     meta: 'Full-time Co-op · 8 months',
     description: 'Placeholder: one sentence on the team and what you worked on.',
     bullets: [
@@ -40,6 +41,7 @@ export const work: ExperienceItem[] = [
     role: 'AI Engineer Intern',
     org: 'BSH Home Appliances',
     url: 'https://www.bsh-group.com/',
+    logo: 'images/logos/bsh.png',
     meta: 'Summer Intern · 4 months',
     description: 'Placeholder: one sentence on the team and what you worked on.',
     bullets: [
