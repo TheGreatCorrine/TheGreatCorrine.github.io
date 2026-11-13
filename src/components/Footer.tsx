@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import styled from 'styled-components';
 import { siteConfig, socialMedia } from '../config';
 import { mixins } from '../styles/mixins';
@@ -15,65 +14,13 @@ const StyledFooter = styled.footer`
   }
 `;
 
-/* 第一行：左边邮箱，右边 Let's Connect */
-const StyledTop = styled.div`
-  ${mixins.flexBetween};
-  flex-wrap: wrap;
-  gap: 16px 32px;
-  padding: 28px 0;
-  border-top: 1px solid var(--bg-hover);
-  border-bottom: 1px solid var(--bg-hover);
-
-  .email {
-    display: flex;
-    align-items: baseline;
-    flex-wrap: wrap;
-    gap: 6px 12px;
-    min-width: 0;
-  }
-
-  .label {
-    color: var(--text-muted);
-    font-family: var(--font-mono);
-    font-size: var(--fz-xs);
-  }
-
-  .address {
-    color: var(--text-strong);
-    font-size: clamp(var(--fz-lg), 2.4vw, var(--fz-xxl));
-    font-weight: 500;
-    overflow-wrap: anywhere;
-  }
-
-  .copy {
-    padding: 4px 8px;
-    border-radius: var(--border-radius);
-    background: transparent;
-    color: var(--text-muted);
-    font-family: var(--font-mono);
-    font-size: var(--fz-xxs);
-    transition: var(--transition);
-
-    &:hover,
-    &:focus-visible {
-      background: var(--accent-tint);
-      color: var(--accent-text);
-    }
-  }
-
-  .connect {
-    ${mixins.smallButton};
-    font-size: var(--fz-sm);
-    padding: 0.9rem 1.2rem;
-  }
-`;
-
-/* 第二行：版权、Available for work、署名 */
+/* 版权、Available for work、署名 */
 const StyledBottom = styled.div`
   ${mixins.flexBetween};
   flex-wrap: wrap;
   gap: 12px 24px;
   padding-top: 20px;
+  border-top: 1px solid var(--bg-hover);
   color: var(--text-muted);
   font-family: var(--font-mono);
   font-size: var(--fz-xxs);
@@ -121,7 +68,7 @@ const StyledSocialLinks = styled.ul`
     display: flex;
     justify-content: center;
     gap: 20px;
-    margin: 20px 0 0;
+    margin: 0 0 16px;
     padding: 0;
     list-style: none;
     color: var(--text);
@@ -137,64 +84,35 @@ const StyledSocialLinks = styled.ul`
   }
 `;
 
-const Footer = () => {
-  const [copied, setCopied] = useState(false);
-  const linkedin = socialMedia.find(s => s.name === 'Linkedin');
-
-  const copyEmail = async () => {
-    try {
-      await navigator.clipboard.writeText(siteConfig.email);
-      setCopied(true);
-      window.setTimeout(() => setCopied(false), 1800);
-    } catch {
-      window.location.href = `mailto:${siteConfig.email}`;
-    }
-  };
-
-  return (
-    <StyledFooter id="contact">
-      <StyledTop>
-        <div className="email">
-          <span className="label">Email :</span>
-          <a className="address" href={`mailto:${siteConfig.email}`}>
-            {siteConfig.email}
+const Footer = () => (
+  <StyledFooter>
+    <StyledSocialLinks>
+      {socialMedia.map(({ name, url }) => (
+        <li key={name}>
+          <a
+            href={url}
+            aria-label={name}
+            {...(url.startsWith('http') ? { target: '_blank', rel: 'noreferrer' } : {})}>
+            <Icon name={name} />
           </a>
-          <button type="button" className="copy" onClick={copyEmail} aria-live="polite">
-            {copied ? 'Copied' : 'Copy'}
-          </button>
-        </div>
-        {linkedin && (
-          <a className="connect" href={linkedin.url} target="_blank" rel="noreferrer">
-            Let’s Connect
-          </a>
-        )}
-      </StyledTop>
+        </li>
+      ))}
+    </StyledSocialLinks>
 
-      <StyledSocialLinks>
-        {socialMedia.map(({ name, url }) => (
-          <li key={name}>
-            <a href={url} aria-label={name} target="_blank" rel="noreferrer">
-              <Icon name={name} />
-            </a>
-          </li>
-        ))}
-      </StyledSocialLinks>
-
-      <StyledBottom>
-        <span>© {new Date().getFullYear()} {siteConfig.name}</span>
-        <span className="status">
-          <span className="dot" aria-hidden="true" />
-          Available for work
-        </span>
-        <span>
-          Design inspired by{' '}
-          <a href="https://brittanychiang.com" target="_blank" rel="noreferrer">
-            Brittany Chiang
-          </a>
-        </span>
-      </StyledBottom>
-    </StyledFooter>
-  );
-};
+    <StyledBottom>
+      <span>© {new Date().getFullYear()} {siteConfig.name}</span>
+      <span className="status">
+        <span className="dot" aria-hidden="true" />
+        Available for work
+      </span>
+      <span>
+        Design inspired by{' '}
+        <a href="https://brittanychiang.com" target="_blank" rel="noreferrer">
+          Brittany Chiang
+        </a>
+      </span>
+    </StyledBottom>
+  </StyledFooter>
+);
 
 export default Footer;

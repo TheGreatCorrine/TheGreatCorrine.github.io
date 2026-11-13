@@ -11,19 +11,20 @@ export const siteConfig = {
   resume: 'resume.pdf',
 };
 
-export type SocialName = 'GitHub' | 'Linkedin' | 'Instagram' | 'Twitter' | 'Codepen';
+export type SocialName = 'GitHub' | 'Linkedin' | 'Email' | 'Instagram' | 'Twitter' | 'Codepen';
 
 export const socialMedia: { name: SocialName; url: string }[] = [
   { name: 'GitHub', url: 'https://github.com/TheGreatCorrine' },
   { name: 'Linkedin', url: 'https://www.linkedin.com/in/yining-xiang/' },
+  { name: 'Email', url: `mailto:${siteConfig.email}` },
 ];
 
 export const navLinks = [
   { name: 'About', url: '/#about' },
   { name: 'Work', url: '/#work' },
-  { name: 'Community', url: '/#community' },
+  { name: 'Experience', url: '/#experience' },
   { name: 'Projects', url: '/#projects' },
-  { name: 'Kind Words', url: '/#testimonials' },
+  { name: 'Testimonials', url: '/#testimonials' },
 ].filter(link => link.name !== 'Projects' || featured.length > 0);
 
 export const srConfig = (delay = 200, viewFactor = 0.25) => ({

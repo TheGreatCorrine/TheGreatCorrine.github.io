@@ -46,7 +46,10 @@ const Social = ({ isHome }: { isHome: boolean }) => (
     <StyledSocialList>
       {socialMedia.map(({ url, name }) => (
         <li key={name}>
-          <a href={url} aria-label={name} target="_blank" rel="noreferrer">
+          <a
+              href={url}
+              aria-label={name}
+              {...(url.startsWith('http') ? { target: '_blank', rel: 'noreferrer' } : {})}>
             <Icon name={name} />
           </a>
         </li>

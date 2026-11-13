@@ -19,7 +19,7 @@ const Home = () => (
       <Hero />
       <About />
       <ExperienceSection id="work" heading="Work Experience" items={work} />
-      <ExperienceSection id="community" heading="Community & Open Source" items={involvement} />
+      <ExperienceSection id="experience" heading="Experience" items={involvement} />
       {featured.length > 0 && <Featured />}
       <Testimonials />
     </StyledMainContainer>
