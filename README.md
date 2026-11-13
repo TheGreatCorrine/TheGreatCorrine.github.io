@@ -22,11 +22,12 @@ npm run build    # 打包到 dist/
 | 名字、邮箱、社交链接、导航 | `src/config.ts` |
 | 开场介绍 | `src/content/hero.ts` |
 | About 文字和技能 | `src/content/about.ts` |
-| 02 工作 / co-op 经历 | `src/content/jobs.ts` |
-| 03 课外经历（Beyond Work） | `src/content/involvement.ts` |
+| 02 Work Experience（co-op / 实习） | `src/content/work.ts` |
+| 03 Community & Open Source（社团、GSoC 等） | `src/content/involvement.ts` |
+| 02、03 的区块标题 | `src/pages/Home.tsx` |
 | 04 精选项目 | `src/content/featured.ts` |
 | 05 评价 | `src/content/testimonials.ts` |
-| 页脚的 Get In Touch | `src/components/Footer.tsx` |
+| 页脚（邮箱、Let’s Connect、Available for work） | `src/components/Footer.tsx` |
 | 颜色、字体 | `src/styles/variables.ts` |
 | Logo | `src/components/icons/index.tsx` 里的 `IconLogo`、`IconLoader`，以及 `public/favicon.svg` |
 

@@ -40,11 +40,6 @@ const StyledHeroSection = styled.section`
     margin: 20px 0 0;
     max-width: 540px;
   }
-
-  .email-link {
-    ${mixins.bigButton};
-    margin-top: 50px;
-  }
 `;
 
 const Hero = () => {
@@ -55,9 +50,6 @@ const Hero = () => {
     <h2 className="big-heading">{hero.name}</h2>,
     <h3 className="big-heading">{hero.tagline}</h3>,
     <p dangerouslySetInnerHTML={{ __html: hero.description }} />,
-    <a className="email-link" href={hero.cta.href}>
-      {hero.cta.label}
-    </a>,
   ];
 
   return (

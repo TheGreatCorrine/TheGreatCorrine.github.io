@@ -20,8 +20,8 @@ export const socialMedia: { name: SocialName; url: string }[] = [
 
 export const navLinks = [
   { name: 'About', url: '/#about' },
-  { name: 'Experience', url: '/#jobs' },
-  { name: 'Involvement', url: '/#involvement' },
+  { name: 'Work', url: '/#work' },
+  { name: 'Community', url: '/#community' },
   { name: 'Projects', url: '/#projects' },
   { name: 'Kind Words', url: '/#testimonials' },
 ].filter(link => link.name !== 'Projects' || featured.length > 0);

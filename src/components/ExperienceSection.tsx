@@ -1,7 +1,8 @@
 import { PointerEvent, useRef } from 'react';
 import styled from 'styled-components';
-import { involvement } from '../../content/involvement';
-import useReveal from '../../hooks/useReveal';
+import type { ExperienceItem } from '../content/types';
+import { mixins } from '../styles/mixins';
+import useReveal from '../hooks/useReveal';
 
 const StyledSection = styled.section`
   position: relative;
@@ -25,6 +26,17 @@ const StyledSection = styled.section`
     /* 触屏设备没有悬停，不需要光斑 */
     @media (hover: none), (max-width: 768px) {
       display: none;
+    }
+  }
+
+  /* 标题较长时（比如 Community & Open Source）在手机上允许换行 */
+  .numbered-heading {
+    @media (max-width: 600px) {
+      white-space: normal;
+
+      &:after {
+        display: none;
+      }
     }
   }
 
@@ -160,6 +172,23 @@ const StyledItem = styled.li`
     color: var(--text-body);
   }
 
+  .bullets {
+    ${mixins.fancyList};
+    position: relative;
+    z-index: 2;
+    margin-top: 12px;
+    font-size: var(--fz-md);
+    line-height: 1.55;
+
+    li {
+      margin-bottom: 6px;
+    }
+
+    a {
+      ${mixins.inlineLink};
+    }
+  }
+
   .tags {
     display: flex;
     flex-wrap: wrap;
@@ -190,7 +219,14 @@ const Arrow = () => (
   </svg>
 );
 
-const Involvement = () => {
+interface Props {
+  id: string;
+  heading: string;
+  items: ExperienceItem[];
+}
+
+/** 02 和 03 共用的经历列表：左边时间，右边“职位 · 组织 ↗”、描述、要点和标签。 */
+const ExperienceSection = ({ id, heading, items }: Props) => {
   const revealContainer = useRef<HTMLElement>(null);
   useReveal([revealContainer]);
 
@@ -202,12 +238,12 @@ const Involvement = () => {
   };
 
   return (
-    <StyledSection id="involvement" ref={revealContainer} tabIndex={-1} onPointerMove={onPointerMove}>
+    <StyledSection id={id} ref={revealContainer} tabIndex={-1} onPointerMove={onPointerMove}>
       <div className="spotlight" aria-hidden="true" />
-      <h2 className="numbered-heading">Beyond Work</h2>
+      <h2 className="numbered-heading">{heading}</h2>
 
       <ol className="list">
-        {involvement.map(({ range, role, org, url, description, tags }) => (
+        {items.map(({ range, role, org, url, description, bullets, tags }) => (
           <StyledItem key={`${role}-${org}`}>
             <div className="glass" aria-hidden="true" />
             <div className="card">
@@ -226,6 +262,13 @@ const Involvement = () => {
                   )}
                 </h3>
                 {description && <p>{description}</p>}
+                {bullets && bullets.length > 0 && (
+                  <ul className="bullets">
+                    {bullets.map((b, k) => (
+                      <li key={k} dangerouslySetInnerHTML={{ __html: b }} />
+                    ))}
+                  </ul>
+                )}
                 {tags && tags.length > 0 && (
                   <ul className="tags" aria-label="Skills">
                     {tags.map(t => (
@@ -242,4 +285,4 @@ const Involvement = () => {
   );
 };
 
-export default Involvement;
+export default ExperienceSection;

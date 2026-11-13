@@ -2,11 +2,12 @@ import styled from 'styled-components';
 import Layout from '../components/Layout';
 import Hero from '../components/sections/Hero';
 import About from '../components/sections/About';
-import Jobs from '../components/sections/Jobs';
 import Featured from '../components/sections/Featured';
-import Involvement from '../components/sections/Involvement';
+import ExperienceSection from '../components/ExperienceSection';
 import Testimonials from '../components/sections/Testimonials';
 import { featured } from '../content/featured';
+import { work } from '../content/work';
+import { involvement } from '../content/involvement';
 
 const StyledMainContainer = styled.main`
   counter-reset: section;
@@ -17,8 +18,8 @@ const Home = () => (
     <StyledMainContainer className="fillHeight">
       <Hero />
       <About />
-      <Jobs />
-      <Involvement />
+      <ExperienceSection id="work" heading="Work Experience" items={work} />
+      <ExperienceSection id="community" heading="Community & Open Source" items={involvement} />
       {featured.length > 0 && <Featured />}
       <Testimonials />
     </StyledMainContainer>
