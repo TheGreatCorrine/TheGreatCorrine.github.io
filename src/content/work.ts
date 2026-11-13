@@ -14,7 +14,7 @@ export const work: ExperienceItem[] = [
     role: 'Software Engineer Intern',
     org: 'Kinaxis',
     url: 'https://www.kinaxis.com/',
-    logo: 'images/logos/kinaxis.png',
+    logo: 'images/logos/kinaxis-k.png',
     meta: 'Full-time Co-op · Incoming',
     description: 'Placeholder: one sentence on the team and what you worked on.',
     bullets: [
