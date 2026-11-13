@@ -8,6 +8,12 @@ import type { ExperienceItem } from './types';
 // TODO: 每段经历可以补一句 description，或者 2–4 条 bullets，再加几个技术栈 tags
 export const work: ExperienceItem[] = [
   {
+    range: 'Starting Jan 2027',
+    role: 'Software Engineer Intern',
+    org: 'Kinaxis',
+    url: 'https://www.kinaxis.com/',
+  },
+  {
     range: 'Jan – Aug 2026',
     role: 'Platform Engineer Intern',
     org: 'Terminal',

@@ -19,26 +19,61 @@ const StyledHeroSection = styled.section`
   }
 
   h1 {
-    margin: 0 0 30px 4px;
+    margin: 0 0 24px 4px;
     color: var(--accent-text);
     font-family: var(--font-mono);
-    font-size: clamp(var(--fz-sm), 5vw, var(--fz-md));
-    font-weight: 400;
+    font-size: clamp(var(--fz-sm), 3vw, var(--fz-md));
+    font-weight: 500;
+    letter-spacing: 0.18em;
 
     @media (max-width: 480px) {
-      margin: 0 0 20px 2px;
+      margin: 0 0 16px 2px;
     }
   }
 
-  h3 {
-    margin-top: 5px;
-    color: var(--text-body);
-    line-height: 0.9;
+  h2 {
+    margin: 0;
+
+    .dot {
+      color: var(--accent);
+    }
   }
 
-  p {
-    margin: 20px 0 0;
-    max-width: 540px;
+  dl {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 14px 36px;
+    align-items: baseline;
+    margin: 44px 0 0 4px;
+
+    @media (max-width: 480px) {
+      gap: 12px 20px;
+      margin-top: 32px;
+    }
+  }
+
+  dt {
+    color: var(--accent-text);
+    font-family: var(--font-mono);
+    font-size: var(--fz-xs);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  dd {
+    margin: 0;
+    color: var(--text);
+    font-size: var(--fz-xl);
+    line-height: 1.4;
+
+    @media (max-width: 480px) {
+      font-size: var(--fz-md);
+    }
+
+    .muted {
+      color: var(--text-muted);
+      font-size: 0.85em;
+    }
   }
 `;
 
@@ -46,10 +81,19 @@ const Hero = () => {
   const mounted = useMounted(navDelay);
 
   const items = [
-    <h1>{hero.greeting}</h1>,
-    <h2 className="big-heading">{hero.name}</h2>,
-    <h3 className="big-heading">{hero.tagline}</h3>,
-    <p dangerouslySetInnerHTML={{ __html: hero.description }} />,
+    <h1>{hero.name}</h1>,
+    <h2 className="big-heading">
+      {hero.title}
+      <span className="dot">.</span>
+    </h2>,
+    <dl>
+      {hero.facts.map(({ label, value }) => (
+        <div key={label} style={{ display: 'contents' }}>
+          <dt>{label}</dt>
+          <dd dangerouslySetInnerHTML={{ __html: value }} />
+        </div>
+      ))}
+    </dl>,
   ];
 
   return (

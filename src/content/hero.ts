@@ -1,8 +1,13 @@
-/** 首页开场。description 里可以写 <a> 链接。 */
+/**
+ * 首页开场：橙色小字名字 → 大标题 → School / Majors / Co-ops 信息表。
+ * facts 里每一项是一行；value 里可以写简单的 HTML（比如 <span class="muted">）。
+ */
 export const hero = {
-  greeting: 'Hi, my name is',
-  name: 'Corrine Xiang.',
-  tagline: 'I build software that works.',
-  description:
-    'I’m a fourth-year student at the University of Toronto, pursuing a double degree in Computer Science and Rotman Commerce. I enjoy building software, exploring new technologies, and turning ideas into things that work.',
+  name: 'CORRINE X.',
+  title: 'Software Engineer',
+  facts: [
+    { label: 'School', value: 'University of Toronto ’27' },
+    { label: 'Majors', value: 'Computer Science + Rotman Commerce' },
+    { label: 'Co-ops', value: 'Kinaxis <span class="muted">(incoming)</span> · Terminal · BSH' },
+  ],
 };
