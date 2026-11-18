@@ -75,7 +75,7 @@ const StyledPic = styled.div`
 
   .status {
     left: -30px;
-    bottom: 22px;
+    bottom: -16px;
     padding: 11px 16px 12px;
     border: 1px solid rgba(255, 255, 255, 0.75);
     border-radius: 16px;

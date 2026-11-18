@@ -8,7 +8,7 @@ export const about = {
   // TODO: 换成你真正常用的技能
   skills: ['TypeScript', 'Python', 'React', 'Node.js', 'Kubernetes', 'PostgreSQL'],
   // 头像放在 public/images/ 下，换成你的照片（建议正方形，至少 500×500）
-  photo: 'images/me.svg',
+  photo: 'images/me.jpg',
   photoAlt: 'Corrine Xiang',
   // 照片旁边的两个小气泡
   location: 'Toronto, ON',
