@@ -63,7 +63,7 @@ const StyledPic = styled.div`
 
   .location {
     top: 18px;
-    right: -22px;
+    left: -22px;
     padding: 8px 14px;
     border-radius: 12px;
     background: #3d3d3a;
@@ -74,8 +74,8 @@ const StyledPic = styled.div`
   }
 
   .status {
-    left: -30px;
-    bottom: -16px;
+    right: -30px;
+    bottom: -6px;
     padding: 11px 16px 12px;
     border: 1px solid rgba(255, 255, 255, 0.75);
     border-radius: 16px;
@@ -104,10 +104,10 @@ const StyledPic = styled.div`
 
   @media (max-width: 480px) {
     .location {
-      right: -12px;
+      left: -12px;
     }
     .status {
-      left: -16px;
+      right: -16px;
     }
   }
 
@@ -139,7 +139,7 @@ const StyledPic = styled.div`
       position: relative;
       width: 100%;
       height: auto;
-      aspect-ratio: 640 / 750;
+      aspect-ratio: 640 / 725;
       object-fit: cover;
       border-radius: var(--border-radius);
       transition: var(--transition);
@@ -185,7 +185,7 @@ const About = () => {
 
         <StyledPic>
           <div className="wrapper">
-            <img className="img" src={asset(about.photo)} width={640} height={750} alt={about.photoAlt} />
+            <img className="img" src={asset(about.photo)} width={640} height={725} alt={about.photoAlt} />
           </div>
           <span className="bubble location">{about.location}</span>
           <span className="bubble status">

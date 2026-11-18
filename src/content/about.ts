@@ -7,7 +7,7 @@ export const about = {
   ],
   // TODO: 换成你真正常用的技能
   skills: ['TypeScript', 'Python', 'React', 'Node.js', 'Kubernetes', 'PostgreSQL'],
-  // 照片放在 public/images/ 下，竖版 640×750；换照片时记得改文件名，避免浏览器缓存旧图
+  // 照片放在 public/images/ 下，竖版 640×725；换照片时记得改文件名，避免浏览器缓存旧图
   photo: 'images/me-portrait.jpg',
   photoAlt: 'Corrine Xiang',
   // 照片旁边的两个小气泡
