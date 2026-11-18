@@ -122,8 +122,8 @@ const StyledPic = styled.div`
     position: relative;
     width: 100%;
     border-radius: var(--border-radius);
-    background-color: var(--img-tint);
 
+    /* 照片一直是彩色；悬停时照片往左上浮起，橙色框往右下靠近 */
     &:hover,
     &:focus {
       outline: 0;
@@ -132,11 +132,6 @@ const StyledPic = styled.div`
       &:after {
         transform: translate(8px, 8px);
       }
-
-      .img {
-        filter: none;
-        mix-blend-mode: normal;
-      }
     }
 
     .img {
@@ -144,15 +139,12 @@ const StyledPic = styled.div`
       position: relative;
       width: 100%;
       height: auto;
-      aspect-ratio: 1;
+      aspect-ratio: 640 / 750;
       object-fit: cover;
       border-radius: var(--border-radius);
-      mix-blend-mode: multiply;
-      filter: grayscale(100%) contrast(1);
       transition: var(--transition);
     }
 
-    &:before,
     &:after {
       content: '';
       display: block;
@@ -161,23 +153,6 @@ const StyledPic = styled.div`
       height: 100%;
       border-radius: var(--border-radius);
       transition: var(--transition);
-    }
-
-    &:before {
-      top: 0;
-      left: 0;
-      background-color: var(--bg);
-      mix-blend-mode: screen;
-      opacity: 0.25;
-      z-index: 1;
-      pointer-events: none;
-    }
-
-    &:hover:before {
-      opacity: 0;
-    }
-
-    &:after {
       border: 2px solid var(--accent);
       top: 14px;
       left: 14px;
@@ -210,7 +185,7 @@ const About = () => {
 
         <StyledPic>
           <div className="wrapper">
-            <img className="img" src={asset(about.photo)} width={500} height={500} alt={about.photoAlt} />
+            <img className="img" src={asset(about.photo)} width={640} height={750} alt={about.photoAlt} />
           </div>
           <span className="bubble location">{about.location}</span>
           <span className="bubble status">
