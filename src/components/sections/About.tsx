@@ -50,7 +50,66 @@ const StyledText = styled.div`
 
 const StyledPic = styled.div`
   position: relative;
+  align-self: start;
   max-width: 300px;
+
+  /* 照片旁边的两个小气泡 */
+  .bubble {
+    position: absolute;
+    z-index: 3;
+    pointer-events: none;
+    white-space: nowrap;
+  }
+
+  .location {
+    top: 18px;
+    right: -22px;
+    padding: 8px 14px;
+    border-radius: 12px;
+    background: #3d3d3a;
+    box-shadow: 0 10px 22px -12px rgba(20, 20, 19, 0.5);
+    color: #faf9f5;
+    font-family: var(--font-mono);
+    font-size: var(--fz-xs);
+  }
+
+  .status {
+    left: -30px;
+    bottom: 22px;
+    padding: 11px 16px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    border-radius: 16px;
+    background: rgba(250, 249, 245, 0.82);
+    box-shadow: 0 14px 28px -16px rgba(20, 20, 19, 0.45);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    .label {
+      display: block;
+      margin-bottom: 3px;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+      font-size: var(--fz-xxs);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .text {
+      display: block;
+      color: var(--text-strong);
+      font-size: var(--fz-sm);
+      font-weight: 600;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .location {
+      right: -12px;
+    }
+    .status {
+      left: -16px;
+    }
+  }
 
   @media (max-width: 768px) {
     margin: 50px auto 0;
@@ -153,6 +212,11 @@ const About = () => {
           <div className="wrapper">
             <img className="img" src={asset(about.photo)} width={500} height={500} alt={about.photoAlt} />
           </div>
+          <span className="bubble location">{about.location}</span>
+          <span className="bubble status">
+            <span className="label">{about.status.label}</span>
+            <span className="text">{about.status.text}</span>
+          </span>
         </StyledPic>
       </div>
     </StyledAboutSection>

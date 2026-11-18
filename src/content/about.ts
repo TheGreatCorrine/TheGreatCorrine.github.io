@@ -10,4 +10,7 @@ export const about = {
   // 头像放在 public/images/ 下，换成你的照片（建议正方形，至少 500×500）
   photo: 'images/me.svg',
   photoAlt: 'Corrine Xiang',
+  // 照片旁边的两个小气泡
+  location: 'Toronto, ON',
+  status: { label: 'Incoming', text: 'Software Engineer Intern · Kinaxis' },
 };
