@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { siteConfig, socialMedia } from '../config';
 import { mixins } from '../styles/mixins';
 import { Icon } from './icons';
+import { useLang } from '../i18n';
 
 const StyledFooter = styled.footer`
   width: 100%;
@@ -84,7 +85,9 @@ const StyledSocialLinks = styled.ul`
   }
 `;
 
-const Footer = () => (
+const Footer = () => {
+  const { t } = useLang();
+  return (
   <StyledFooter>
     <StyledSocialLinks>
       {socialMedia.map(({ name, url }) => (
@@ -103,16 +106,17 @@ const Footer = () => (
       <span>© {new Date().getFullYear()} {siteConfig.name}</span>
       <span className="status">
         <span className="dot" aria-hidden="true" />
-        Available for work
+        {t('Available for work', '正在寻找工作机会')}
       </span>
       <span>
-        Design inspired by{' '}
+        {t('Design inspired by', '设计灵感来自')}{' '}
         <a href="https://brittanychiang.com" target="_blank" rel="noreferrer">
           Brittany Chiang
         </a>
       </span>
     </StyledBottom>
   </StyledFooter>
-);
+  );
+};
 
 export default Footer;

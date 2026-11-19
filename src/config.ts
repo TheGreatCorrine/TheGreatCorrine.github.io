@@ -18,10 +18,10 @@ export const socialMedia: { name: SocialName; url: string }[] = [
 ];
 
 export const navLinks = [
-  { name: 'About', url: '/#about' },
-  { name: 'Work', url: '/#work' },
-  { name: 'Experience', url: '/#experience' },
-  { name: 'Projects', url: '/#projects' },
+  { name: 'About', zh: '关于我', url: '/#about' },
+  { name: 'Work', zh: '工作经历', url: '/#work' },
+  { name: 'Experience', zh: '其他经历', url: '/#experience' },
+  { name: 'Projects', zh: '项目', url: '/#projects' },
 ].filter(link => link.name !== 'Projects' || featured.length > 0);
 
 export const srConfig = (delay = 200, viewFactor = 0.25) => ({

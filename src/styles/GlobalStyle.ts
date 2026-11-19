@@ -332,6 +332,18 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
+  /* 中文版：区块标题的斜体衬线没有中文字形，换回无衬线正体 */
+  .lang-zh .numbered-heading {
+    font-family: var(--font-sans), 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+
+  .lang-zh .big-heading {
+    letter-spacing: 0.02em;
+  }
+
   /* 入场动画（替代原版 react-transition-group 的 fadeup / fadedown / fade） */
   .fadeup, .fadedown, .fade {
     transition: opacity 300ms var(--easing), transform 300ms var(--easing);

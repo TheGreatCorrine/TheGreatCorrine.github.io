@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { siteConfig } from '../config';
 import { mixins } from '../styles/mixins';
 import useOnClickOutside from '../hooks/useOnClickOutside';
+import { useLang } from '../i18n';
 
 const StyledWrapper = styled.div<{ $align: 'right' | 'center' }>`
   position: relative;
@@ -75,6 +76,7 @@ interface Props {
 
 /** Resume 按钮：不直接下载，点了弹出提示，请访客直接找 Corrine 要。 */
 const ResumeButton = ({ className, align = 'right', tabIndex }: Props) => {
+  const { t } = useLang();
   const [open, setOpen] = useState(false);
   const wrapperRef = useRef<HTMLDivElement>(null);
   const popoverId = useId();
@@ -100,13 +102,14 @@ const ResumeButton = ({ className, align = 'right', tabIndex }: Props) => {
         aria-controls={popoverId}
         tabIndex={tabIndex}
         onClick={() => setOpen(o => !o)}>
-        Resume
+        {t('Resume', '简历')}
       </button>
       {open && (
         <div className="popover" id={popoverId} role="status">
-          <span className="popover-title">Resume available on request</span>
-          Just ask! Email me at <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a> and I’ll send
-          it over.
+          <span className="popover-title">{t('Resume available on request', '简历可以直接找我要')}</span>
+          {t('Just ask! Email me at ', '发邮件到 ')}
+          <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
+          {t(' and I’ll send it over.', '，我会发给你。')}
         </div>
       )}
     </StyledWrapper>

@@ -6,6 +6,8 @@ import { mixins } from '../styles/mixins';
 import { KEY_CODES } from '../utils';
 import useOnClickOutside from '../hooks/useOnClickOutside';
 import ResumeButton from './ResumeButton';
+import LangToggle from './LangToggle';
+import { useLang } from '../i18n';
 
 const StyledMenu = styled.div`
   display: none;
@@ -151,6 +153,10 @@ const StyledSidebar = styled.aside<{ $menuOpen: boolean }>`
     }
   }
 
+  .lang-toggle {
+    margin-top: 6%;
+  }
+
   .resume-wrap {
     margin: 10% auto 0;
   }
@@ -163,6 +169,7 @@ const StyledSidebar = styled.aside<{ $menuOpen: boolean }>`
 `;
 
 const Menu = () => {
+  const { t } = useLang();
   const [menuOpen, setMenuOpen] = useState(false);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const navRef = useRef<HTMLElement>(null);
@@ -224,14 +231,15 @@ const Menu = () => {
         <StyledSidebar $menuOpen={menuOpen} aria-hidden={!menuOpen} tabIndex={menuOpen ? 1 : -1}>
           <nav ref={navRef}>
             <ol>
-              {navLinks.map(({ url, name }) => (
+              {navLinks.map(({ url, name, zh }) => (
                 <li key={name}>
                   <Link to={url} onClick={close} tabIndex={menuOpen ? 0 : -1}>
-                    {name}
+                    {t(name, zh)}
                   </Link>
                 </li>
               ))}
             </ol>
+            <LangToggle className="lang-toggle" tabIndex={menuOpen ? 0 : -1} />
             <div className="resume-wrap">
               <ResumeButton className="resume-link" align="center" tabIndex={menuOpen ? 0 : -1} />
             </div>
