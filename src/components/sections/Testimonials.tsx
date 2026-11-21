@@ -1,8 +1,6 @@
 import { useRef } from 'react';
 import styled from 'styled-components';
-import { testimonials as testimonialsEn, testimonialsIntro as introEn } from '../../content/testimonials';
-import { testimonialsZh, testimonialsIntroZh } from '../../content/zh';
-import { useLang } from '../../i18n';
+import { testimonials, testimonialsIntro } from '../../content/testimonials';
 import { asset } from '../../utils';
 import useReveal from '../../hooks/useReveal';
 
@@ -154,9 +152,6 @@ const initials = (name: string) =>
     .toUpperCase();
 
 const Testimonials = () => {
-  const { t } = useLang();
-  const testimonials = t(testimonialsEn, testimonialsZh);
-  const testimonialsIntro = t(introEn, testimonialsIntroZh);
   const revealTitle = useRef<HTMLDivElement>(null);
   const revealGrid = useRef<HTMLUListElement>(null);
   useReveal([revealTitle, revealGrid]);
@@ -166,7 +161,7 @@ const Testimonials = () => {
   return (
     <StyledSection id="testimonials" tabIndex={-1}>
       <div ref={revealTitle}>
-        <h2 className="numbered-heading">{t('What It’s Like to Work With Me', '同事眼中的我')}</h2>
+        <h2 className="numbered-heading">What It’s Like to Work With Me</h2>
         <p className="intro">{testimonialsIntro}</p>
       </div>
 

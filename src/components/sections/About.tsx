@@ -1,8 +1,6 @@
 import { useRef } from 'react';
 import styled from 'styled-components';
 import { about } from '../../content/about';
-import { aboutZh } from '../../content/zh';
-import { useLang } from '../../i18n';
 import { mixins } from '../../styles/mixins';
 import { asset } from '../../utils';
 import useReveal from '../../hooks/useReveal';
@@ -164,18 +162,17 @@ const StyledPic = styled.div`
 `;
 
 const About = () => {
-  const { t } = useLang();
   const revealContainer = useRef<HTMLElement>(null);
   useReveal([revealContainer]);
 
   return (
     <StyledAboutSection id="about" ref={revealContainer} tabIndex={-1}>
-      <h2 className="numbered-heading">{t('About Me', '关于我')}</h2>
+      <h2 className="numbered-heading">About Me</h2>
 
       <div className="inner">
         <StyledText>
           <div>
-            {t(about.paragraphs, aboutZh.paragraphs).map((p, i) => (
+            {about.paragraphs.map((p, i) => (
               <p key={i} dangerouslySetInnerHTML={{ __html: p }} />
             ))}
           </div>
@@ -190,10 +187,10 @@ const About = () => {
           <div className="wrapper">
             <img className="img" src={asset(about.photo)} width={640} height={725} alt={about.photoAlt} />
           </div>
-          <span className="bubble location">{t(about.location, aboutZh.location)}</span>
+          <span className="bubble location">{about.location}</span>
           <span className="bubble status">
-            <span className="label">{t(about.status.label, aboutZh.status.label)}</span>
-            <span className="text">{t(about.status.text, aboutZh.status.text)}</span>
+            <span className="label">{about.status.label}</span>
+            <span className="text">{about.status.text}</span>
           </span>
         </StyledPic>
       </div>

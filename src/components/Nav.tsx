@@ -9,8 +9,6 @@ import useMounted from '../hooks/useMounted';
 import FadeIn from './FadeIn';
 import Menu from './Menu';
 import ResumeButton from './ResumeButton';
-import LangToggle from './LangToggle';
-import { useLang } from '../i18n';
 import { IconLogo } from './icons';
 
 const StyledHeader = styled.header<{ $dir: ScrollDirection; $top: boolean }>`
@@ -138,21 +136,14 @@ const StyledLinks = styled.div`
     }
   }
 
-  .nav-actions {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-left: 15px;
-  }
-
   .resume-button {
     ${mixins.smallButton};
+    margin-left: 15px;
     font-size: var(--fz-xs);
   }
 `;
 
 const Nav = ({ isHome }: { isHome: boolean }) => {
-  const { t } = useLang();
   const reduced = usePrefersReducedMotion();
   const mounted = useMounted(isHome ? 100 : 0, isHome);
   const scrollDirection = useScrollDirection('down');
@@ -181,22 +172,19 @@ const Nav = ({ isHome }: { isHome: boolean }) => {
 
         <StyledLinks>
           <ol>
-            {navLinks.map(({ url, name, zh }, i) => (
+            {navLinks.map(({ url, name }, i) => (
               <FadeIn
                 key={name}
                 as="li"
                 show={show}
                 variant={fadeDown ?? 'fade'}
                 delay={animate ? i * 100 : 0}>
-                <Link to={url}>{t(name, zh)}</Link>
+                <Link to={url}>{name}</Link>
               </FadeIn>
             ))}
           </ol>
           <FadeIn show={show} variant={fadeDown ?? 'fade'} delay={animate ? navLinks.length * 100 : 0}>
-            <div className="nav-actions">
-              <LangToggle />
-              <ResumeButton className="resume-button" />
-            </div>
+            <ResumeButton className="resume-button" />
           </FadeIn>
         </StyledLinks>
 

@@ -7,14 +7,11 @@ import '@fontsource/inter/600.css';
 import '@fontsource/jetbrains-mono/400.css';
 import '@fontsource-variable/fraunces/soft-italic.css';
 import App from './App';
-import { LangProvider } from './i18n';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <BrowserRouter basename={import.meta.env.BASE_URL}>
-      <LangProvider>
-        <App />
-      </LangProvider>
+      <App />
     </BrowserRouter>
   </StrictMode>,
 );

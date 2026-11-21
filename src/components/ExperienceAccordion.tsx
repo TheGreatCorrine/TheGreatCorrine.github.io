@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import type { ExperienceItem } from '../content/types';
 import { mixins } from '../styles/mixins';
 import { asset } from '../utils';
-import { useLang } from '../i18n';
 import useReveal from '../hooks/useReveal';
 
 const StyledSection = styled.section`
@@ -406,7 +405,6 @@ interface Props {
 
 /** 02 Work 和 03 Experience 共用：点击展开的经历列表，一次只展开一条。展开后显示 logo、描述、要点、标签和官网按钮。 */
 const ExperienceAccordion = ({ id, heading, items }: Props) => {
-  const { t } = useLang();
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const revealContainer = useRef<HTMLElement>(null);
   useReveal([revealContainer]);
@@ -489,7 +487,7 @@ const ExperienceAccordion = ({ id, heading, items }: Props) => {
                           target="_blank"
                           rel="noreferrer"
                           tabIndex={open ? 0 : -1}>
-                          {t(`Visit ${org.split(/[\s,]/)[0]}`, '访问官网')}
+                          Visit {org.split(/[\s,]/)[0]}
                           <Arrow />
                         </a>
                       )}

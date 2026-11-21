@@ -1,7 +1,5 @@
 import styled from 'styled-components';
-import { hero as heroEn } from '../../content/hero';
-import { heroZh } from '../../content/zh';
-import { useLang } from '../../i18n';
+import { hero } from '../../content/hero';
 import { mixins } from '../../styles/mixins';
 import { navDelay } from '../../utils';
 import useMounted from '../../hooks/useMounted';
@@ -102,8 +100,6 @@ const StyledHeroSection = styled.section`
 `;
 
 const Hero = () => {
-  const { t } = useLang();
-  const hero = t(heroEn, heroZh);
   const mounted = useMounted(navDelay);
 
   const items = [
@@ -112,7 +108,7 @@ const Hero = () => {
       {hero.title}
       <span className="dot">.</span>
     </h2>,
-    <dl key={hero.title}>
+    <dl>
       {hero.facts.map(({ label, value }) => (
         <div key={label} style={{ display: 'contents' }}>
           <dt>{label}</dt>
