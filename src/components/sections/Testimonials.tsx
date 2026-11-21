@@ -124,7 +124,7 @@ const StyledCard = styled.li`
       font-family: var(--font-display);
       /* 按卡片宽度缩放，保证 COLLABORATE 这种长词放得下 */
       font-size: clamp(30px, 12cqi, 60px);
-      font-weight: 700;
+      font-weight: 600;
       line-height: 0.95;
       letter-spacing: -0.03em;
       text-transform: uppercase;
