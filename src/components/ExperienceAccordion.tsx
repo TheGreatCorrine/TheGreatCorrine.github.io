@@ -110,6 +110,24 @@ const StyledItem = styled.li`
     background: rgba(250, 249, 245, 0.78);
   }
 
+  /* 最近的几段经历：左边一根陶土色细竖线，像书签 */
+  &.pinned:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 20px;
+    z-index: 1;
+    width: 3px;
+    height: 34px;
+    border-radius: 3px;
+    background: var(--accent);
+
+    @media (max-width: 600px) {
+      top: 16px;
+      height: 40px;
+    }
+  }
+
   .head {
     position: relative;
     display: grid;
@@ -128,7 +146,7 @@ const StyledItem = styled.li`
 
     @media (max-width: 600px) {
       grid-template-columns: 1fr auto;
-      padding: 18px 8px 18px 4px;
+      padding: 18px 8px 18px 16px;
     }
   }
 
@@ -148,7 +166,8 @@ const StyledItem = styled.li`
 
   .title {
     min-width: 0;
-    color: var(--text-strong);
+    /* 平时用正文的灰色，悬停 / 展开时变成强调色 */
+    color: var(--text-body);
     font-size: var(--fz-xl);
     font-weight: 500;
     line-height: 1.3;
@@ -229,7 +248,7 @@ const StyledItem = styled.li`
 
     @media (max-width: 600px) {
       grid-template-columns: 1fr;
-      padding: 0 4px 20px;
+      padding: 0 8px 20px 16px;
     }
   }
 
@@ -428,7 +447,7 @@ const ExperienceAccordion = ({ id, heading, items }: Props) => {
           const headId = `${id}-head-${i}`;
           const bodyId = `${id}-body-${i}`;
           return (
-            <StyledItem key={`${role}-${org}`} className={open ? 'open' : undefined}>
+            <StyledItem key={`${role}-${org}`} className={[open && 'open', item.pinned && 'pinned'].filter(Boolean).join(' ') || undefined}>
               <div className="glass" aria-hidden="true" />
               <button
                 type="button"

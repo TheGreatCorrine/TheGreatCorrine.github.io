@@ -18,6 +18,8 @@ export interface ExperienceItem {
   logo?: string;
   /** 展开后显示在描述上方的横版 logo / banner，比如 'images/logos/kinaxis-banner.png' */
   banner?: string;
+  /** true 时左边显示一根橙色细竖线（书签），用来标出最近的经历 */
+  pinned?: boolean;
   /** 展开后 logo 下面的一行小字，比如 'Toronto, ON · 8 months' */
   meta?: string;
 }
