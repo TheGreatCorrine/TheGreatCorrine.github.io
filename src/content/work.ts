@@ -32,7 +32,7 @@ export const work: ExperienceItem[] = [
     url: 'https://www.withterminal.com/',
     logo: 'images/logos/terminal.png',
     meta: 'Full-time Co-op · 8 months',
-    description: 'Built backend services and data tooling on the platform team.',
+    description: 'Worked on the Platform team, building backend services and cloud infrastructure.',
     bullets: [
       'Built an event-driven data validation pipeline for onboarding 290+ providers.',
       'Resolved 20+ production incidents, including a backfill that repaired two years of affected records.',
@@ -47,7 +47,7 @@ export const work: ExperienceItem[] = [
     url: 'https://www.bsh-group.com/',
     logo: 'images/logos/bsh.png',
     meta: 'Summer Intern · 4 months',
-    description: 'Worked on computer vision systems for refrigerator R&D testing.',
+    description: 'Worked on the refrigerator R&D team, building on-device software and data infrastructure for smart fridge AI.',
     bullets: [
       'Raised food-freshness detection accuracy from 73% to 77%, with on-device inference under 1.3 s end to end.',
       'Built a monitoring tool that saves 106 engineers about 30 minutes a day.',
