@@ -7,7 +7,7 @@ export const hero = {
   title: 'Software Engineer',
   facts: [
     { label: 'School', value: 'University of Toronto ’27' },
-    { label: 'Majors', value: 'Computer Science + Rotman Commerce' },
+    { label: 'Majors', value: 'BSc Computer Science + BCom Management' },
     { label: 'Co-ops', value: 'Kinaxis <span class="muted">(incoming)</span> · Terminal · BSH' },
   ],
 };
