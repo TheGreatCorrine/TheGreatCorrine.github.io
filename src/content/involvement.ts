@@ -10,6 +10,7 @@ export const involvement: ExperienceItem[] = [
     range: 'Oct 2026 – Present',
     role: 'Back End Developer',
     org: 'UofT Women in Computer Science (WiCS)',
+    pinned: true,
     url: 'https://www.uoftwics.com/',
     logo: 'images/logos/wics.png',
     meta: 'Volunteer · Ongoing',
