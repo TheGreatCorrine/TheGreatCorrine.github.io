@@ -28,11 +28,10 @@ export const involvement: ExperienceItem[] = [
     url: 'https://www.wdw.utoronto.ca/',
     logo: 'images/logos/woodsworth.png',
     meta: 'Volunteer · 1 year',
-    description: 'Placeholder: one sentence on what you do here and who it helps.',
+    description: 'Coordinated Woodsworth College’s First-Year Mentorship Program.',
     bullets: [
-      'Placeholder: something you organized or built, and the result.',
-      'Placeholder: another highlight, ideally with a number (e.g. mentored 12 first-years).',
+      'Ran webinars, academic workshops and social nights for 1,000+ first-year students.',
     ],
-    tags: ['Placeholder', 'Skills'],
+    tags: ['Leadership', 'Event Planning', 'Mentorship'],
   },
 ];
