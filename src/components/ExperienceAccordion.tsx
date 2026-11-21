@@ -110,17 +110,6 @@ const StyledItem = styled.li`
     background: rgba(250, 249, 245, 0.78);
   }
 
-  /* 最近的几段经历：常驻一层更淡的毛玻璃，悬停或展开时再变清楚 */
-  &.highlight .glass {
-    opacity: 0.6;
-  }
-
-  &.highlight:hover .glass,
-  &.highlight:focus-within .glass,
-  &.highlight.open .glass {
-    opacity: 1;
-  }
-
   .head {
     position: relative;
     display: grid;
@@ -439,7 +428,7 @@ const ExperienceAccordion = ({ id, heading, items }: Props) => {
           const headId = `${id}-head-${i}`;
           const bodyId = `${id}-body-${i}`;
           return (
-            <StyledItem key={`${role}-${org}`} className={[open && 'open', item.highlight && 'highlight'].filter(Boolean).join(' ') || undefined}>
+            <StyledItem key={`${role}-${org}`} className={open ? 'open' : undefined}>
               <div className="glass" aria-hidden="true" />
               <button
                 type="button"

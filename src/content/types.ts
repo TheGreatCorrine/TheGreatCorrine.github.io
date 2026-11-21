@@ -18,8 +18,6 @@ export interface ExperienceItem {
   logo?: string;
   /** 展开后显示在描述上方的横版 logo / banner，比如 'images/logos/kinaxis-banner.png' */
   banner?: string;
-  /** true 时这一条常驻淡淡的毛玻璃底，用来突出最近的经历 */
-  highlight?: boolean;
   /** 展开后 logo 下面的一行小字，比如 'Toronto, ON · 8 months' */
   meta?: string;
 }
