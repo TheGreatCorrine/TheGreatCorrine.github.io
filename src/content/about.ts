@@ -1,12 +1,11 @@
 /** About 部分。每段是一个字符串，可以写 <a> 链接。 */
 export const about = {
   paragraphs: [
-    'Hi, I’m Corrine! I started university pursuing two very different degrees, Commerce and Computer Science, with no idea that I would eventually become a software engineer.',
-    'A personal trading app first brought the two worlds together, and each experience since has taken me deeper into building: from fintech and full-stack products to AI-powered systems and developer infrastructure.',
+    'Hi, I’m Corrine! I started in business school at Rotman, picked up a second degree in Computer Science along the way, and now work as a backend and platform engineer.',
+    'I began in full-stack development, moved into edge AI, and now work on data infrastructure.',
     'Here are a few technologies I’ve been working with recently:',
   ],
-  // TODO: 换成你真正常用的技能
-  skills: ['TypeScript', 'Python', 'React', 'Node.js', 'Kubernetes', 'PostgreSQL'],
+  skills: ['Python', 'Java', 'Kubernetes', 'AWS', 'React', 'PostgreSQL'],
   // 照片放在 public/images/ 下，竖版 640×725；换照片时记得改文件名，避免浏览器缓存旧图
   photo: 'images/me-portrait.jpg',
   photoAlt: 'Corrine Xiang',
