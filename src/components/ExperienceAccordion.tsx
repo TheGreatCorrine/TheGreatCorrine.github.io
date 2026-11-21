@@ -180,6 +180,11 @@ const StyledItem = styled.li`
     }
   }
 
+  /* 钉住的经历平时用深色，和其他灰色的条目拉开对比 */
+  &.pinned .title {
+    color: var(--text-strong);
+  }
+
   &:hover .title,
   &.open .title,
   .head:focus-visible .title {
