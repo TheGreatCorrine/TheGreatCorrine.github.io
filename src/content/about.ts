@@ -2,7 +2,7 @@
 export const about = {
   paragraphs: [
     'Hi, I’m Corrine! I started in business school at Rotman, picked up a second degree in Computer Science along the way, and now work as a backend and platform engineer.',
-    'I began in full-stack development, moved into edge AI, and now work on data infrastructure.',
+    'I began in full-stack development, moved into edge AI, and now work on data infrastructure, a.k.a. the part of the stack that only gets noticed when it breaks.',
     'Here are a few technologies I’ve been working with recently:',
   ],
   skills: ['Python', 'Java', 'Kubernetes', 'AWS', 'React', 'PostgreSQL'],
